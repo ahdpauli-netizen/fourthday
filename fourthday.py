@@ -240,10 +240,17 @@ def django_meta(site, image_id):
     title = meta("og:title") or strip_html((re.search(r"<h1[^>]*>(.*?)</h1>", t, re.S) or [None, ""])[1])
     title = re.sub(r"\s*\|\s*(ESA/Webb|ESA/Hubble|ESO|NOIRLab).*$", "", title)
     # Full description: paragraphs of the main column before the "About the Image" box.
-    body = t.split("About the Image")[0]
-    paras = [strip_html(p) for p in re.findall(r"<p[^>]*>(.*?)</p>", body, re.S)]
-    paras = [p for p in paras if len(p) > 60 and "cookie" not in p.lower()]
-    desc = "\n\n".join(paras[:8]) or meta("og:description") or meta("description")
+    # The text right after the page title, up to the "About the Image" box.
+    body = strip_html(t.split("About the Image")[0])
+    idx = body.rfind(title) if title else -1
+    desc = body[idx + len(title):].strip() if idx >= 0 else ""
+    alt = ""
+    m = re.search(r"\[Image Description:(.*?)\]", desc, re.S)
+    if m:
+        alt = m.group(1).strip()
+        desc = desc[:m.start()].strip()
+    if len(desc) < 80 or len(desc) > 8000:
+        desc = meta("og:description") or meta("description")
 
     def field(label):
         m = re.search(r">\s*%s:?\s*</(?:td|th|div|span|strong|b)>\s*<(?:td|div|span)[^>]*>(.*?)</(?:td|div|span)>"
@@ -258,6 +265,7 @@ def django_meta(site, image_id):
         "title": title,
         "description": desc,
         "credit": credit,
+        "alt_text": alt,
         "distance": field("Distance"),
         "name": field("Name"),
         "constellation": field("Constellation"),
@@ -462,6 +470,7 @@ def cmd_selftest(args):
             log("OK   %s | %s | %dx%d | dist=%r | type=%r | cat=%r | credit=%r | desc=%d chars" % (
                 cand["key"], cand.get("title"), im.size[0], im.size[1], cand.get("distance"),
                 cand.get("type"), cand.get("category"), cand.get("credit"), len(cand.get("description") or "")))
+            log("     desc: %s..." % (cand.get("description") or "")[:160].replace("\n", " "))
         else:
             log("FAIL %s: nothing usable" % src.__name__)
     log("%d/%d sources working" % (ok, len(SOURCES)))
