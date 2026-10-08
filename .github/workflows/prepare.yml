@@ -31,6 +31,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Check the image sources
+        run: python fourthday.py selftest
       - name: Fill the queue
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}

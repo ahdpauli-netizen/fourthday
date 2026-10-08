@@ -41,6 +41,7 @@ BRANCH = os.environ.get("PUBLISH_BRANCH", "main")
 
 TARGET_W, TARGET_H = 1080, 1350  # 4:5 portrait
 MIN_SHORT_SIDE = 1080
+MAX_CROP_LOSS = 0.5  # skip images where the 4:5 crop would keep less than half the width/height
 MAX_DOWNLOAD = 80 * 1024 * 1024
 Image.MAX_IMAGE_PIXELS = 400_000_000
 
@@ -348,6 +349,11 @@ def prepare_one(known, rng_sources):
                         continue
                     im = download_image(url)
                     w, h = im.size
+                    ratio = (w / h) / (TARGET_W / TARGET_H)
+                    if min(ratio, 1 / ratio) < MAX_CROP_LOSS:
+                        log("  skip %s: shape too far from 4:5 (%dx%d)" % (cand["key"], w, h))
+                        known.add(cand["key"])
+                        continue
                     if min(w, h * TARGET_W / TARGET_H) < MIN_SHORT_SIDE:
                         log("  skip %s: too small (%dx%d)" % (cand["key"], w, h))
                         known.add(cand["key"])
@@ -369,6 +375,25 @@ def prepare_one(known, rng_sources):
         except Exception as e:  # noqa: BLE001
             log("  source failed: %s" % e)
     return None
+
+
+def cmd_selftest(args):
+    """Try every source once and report, without touching the queue."""
+    ok = 0
+    for src in SOURCES:
+        try:
+            cand = next(iter(src()))
+            if "lazy_meta" in cand:
+                cand.update(cand.pop("lazy_meta")())
+            url = cand["image_url"]() if callable(cand["image_url"]) else cand["image_url"]
+            im = download_image(url)
+            log("OK   %-18s %s | %s | %dx%d | dist=%r | credit=%r | desc=%d chars" % (
+                src.__name__, cand["key"], cand.get("title"), im.size[0], im.size[1],
+                cand.get("distance"), cand.get("credit"), len(cand.get("description") or "")))
+            ok += 1
+        except Exception as e:  # noqa: BLE001
+            log("FAIL %-18s %r" % (src.__name__, e))
+    log("%d/%d sources working" % (ok, len(SOURCES)))
 
 
 def cmd_prepare(args):
@@ -485,10 +510,11 @@ def main():
     pp.add_argument("--count", type=int, default=3)
     pb = sub.add_parser("publish")
     pb.add_argument("--dry-run", action="store_true")
+    sub.add_parser("selftest")
     sub.add_parser("refresh-token")
     sub.add_parser("check-token")
     args = p.parse_args()
-    {"prepare": cmd_prepare, "publish": cmd_publish,
+    {"prepare": cmd_prepare, "selftest": cmd_selftest, "publish": cmd_publish,
      "refresh-token": cmd_refresh, "check-token": cmd_check}[args.cmd](args)
 
 
