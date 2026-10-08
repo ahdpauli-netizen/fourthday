@@ -75,10 +75,12 @@ def strip_html(s):
 
 
 def is_public_domain(credit, copyright_):
-    """APOD marks third-party images with a copyright; those are skipped."""
-    if strip_html(copyright_):
+    """APOD: keep agency images; skip anything marked copyright/license or credited only to a person."""
+    text = strip_html(credit) + " " + strip_html(copyright_)
+    if re.search(r"copyright|licen[sc]e|\u00a9|\(c\)", text, re.I):
         return False
-    return not re.search(r"copyright|\u00a9|\(c\)", strip_html(credit), re.I)
+    return bool(re.search(r"\b(NASA|ESA|ESO|NOIRLab|JPL|STScI|NSF|CSA|JAXA|SDO|Hubble|Webb|Chandra|"
+                          r"Juno|Cassini|Gemini|CTIO|KPNO|Rubin)\b", text))
 
 
 def src_apod():
@@ -86,7 +88,7 @@ def src_apod():
     url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
     pages = list(range(1, 40))
     random.shuffle(pages)
-    for page in pages[:6]:
+    for page in pages[:10]:
         try:
             items = get(url, params={"per_page": 50, "page": page}).json()
         except Exception as e:  # noqa: BLE001
@@ -114,7 +116,8 @@ def src_apod():
                 "source": "NASA APOD",
                 "title": strip_html(it.get("title")),
                 "description": desc,
-                "credit": strip_html(it.get("credit")) or "NASA",
+                "credit": re.sub(r"^\s*(Image|Video)?\s*Credits?\s*:\s*", "",
+                                 strip_html(it.get("credit"))) or "NASA",
                 "image_url": img,
                 "page_url": it.get("permalink") or it.get("url"),
                 "date": it.get("date"),
