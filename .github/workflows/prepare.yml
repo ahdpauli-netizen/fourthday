@@ -37,6 +37,8 @@ jobs:
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
         run: python fourthday.py prepare --count "${{ github.event.inputs.count || '1' }}"
+      - name: Preview the next post (dry run)
+        run: python fourthday.py publish --dry-run || true
       - name: Save to the repository
         run: |
           git config user.name "fourthday-bot"

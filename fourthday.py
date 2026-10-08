@@ -132,7 +132,7 @@ NASA_QUERIES = [
 ]
 NASA_BAD = re.compile(
     r"\b(astronaut|engineer|technician|test|launch|rollout|crew|ceremony|history|model|"
-    r"hardware|assembly|poster|logo|"
+    r"hardware|assembly|poster|logo|annotated|labell?ed|comparison|infographic|"
     r"briefing|meeting|clean ?room|mockup|artist|illustration|concept|rendering|"
     r"animation|graphic|chart|diagram)\b", re.I)
 
