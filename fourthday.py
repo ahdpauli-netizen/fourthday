@@ -40,7 +40,7 @@ REPO = os.environ.get("GITHUB_REPOSITORY", "ahdpauli-netizen/fourthday")
 BRANCH = os.environ.get("PUBLISH_BRANCH", "main")
 
 TARGET_W, TARGET_H = 1080, 1350  # 4:5 portrait
-MIN_SHORT_SIDE = 1080
+MIN_SHORT_SIDE = 1000
 MAX_CROP_LOSS = 0.5  # skip images where the 4:5 crop would keep less than half the width/height
 MAX_DOWNLOAD = 80 * 1024 * 1024
 Image.MAX_IMAGE_PIXELS = 400_000_000
@@ -74,24 +74,11 @@ def strip_html(s):
 #   key, source, title, description, credit, image_url, page_url, distance (optional)
 
 
-AGENCY_WORDS = set("""
-nasa esa csa jaxa jpl caltech stsci aura nsf noirlab eso hubble webb jwst chandra spitzer
-sdo soho juno cassini galileo swri msss gsfc msfc goddard marshall ames apl jhuapl
-heritage team image images data processing credit credits and the of a cxc sao mit
-uofa ua arizona university institute science center lab laboratory mission space
-telescope observatory kpno ctio gemini nrao alma desi doe usgs iss expedition crew
-""".split())
-
-
 def is_public_domain(credit, copyright_):
-    """APOD: only images credited to agencies/missions, with no personal copyright."""
-    if strip_html(copyright_) and strip_html(copyright_) != strip_html(credit):
+    """APOD marks third-party images with a copyright; those are skipped."""
+    if strip_html(copyright_):
         return False
-    text = strip_html(credit) + " " + strip_html(copyright_)
-    if re.search(r"copyright|\u00a9|\(c\)", text, re.I):
-        return False
-    words = re.findall(r"[A-Za-z]+", text)
-    return bool(words) and all(w.lower() in AGENCY_WORDS for w in words)
+    return not re.search(r"copyright|\u00a9|\(c\)", strip_html(credit), re.I)
 
 
 def src_apod():
@@ -108,6 +95,9 @@ def src_apod():
         if isinstance(items, dict):
             items = items.get("items") or items.get("data") or []
         n_img = n_pd = 0
+        if items:
+            log("  apod sample credit=%r copyright=%r" % (strip_html(items[0].get("credit"))[:80],
+                                                          strip_html(items[0].get("copyright"))[:80]))
         for it in items:
             if it.get("media_type") != "image":
                 continue
@@ -138,7 +128,8 @@ NASA_QUERIES = [
     "Jupiter Juno", "Saturn Cassini", "Mars surface", "Moon", "aurora from space",
 ]
 NASA_BAD = re.compile(
-    r"\b(astronaut|engineer|technician|test|launch|rollout|crew|ceremony|portrait|"
+    r"\b(astronaut|engineer|technician|test|launch|rollout|crew|ceremony|history|model|"
+    r"hardware|assembly|poster|logo|"
     r"briefing|meeting|clean ?room|mockup|artist|illustration|concept|rendering|"
     r"animation|graphic|chart|diagram)\b", re.I)
 
@@ -162,7 +153,7 @@ def src_nasa_images():
     for it in items:
         d = (it.get("data") or [{}])[0]
         text = "%s %s %s" % (d.get("title", ""), d.get("description", ""), " ".join(d.get("keywords") or []))
-        if NASA_BAD.search(text):
+        if NASA_BAD.search(text) or not ASTRO_CATEGORY.search(text):
             continue
         nasa_id = d.get("nasa_id")
         if not nasa_id:
@@ -225,7 +216,7 @@ def django_ids(site):
             break
     seen, out = set(), []
     for i in ids:
-        if i not in seen and i not in ("page", "archive", "potw", "potm", "iotw", "feed", "search"):
+        if i not in seen and i not in ("page", "archive", "potw", "potm", "iotw", "feed", "search", "viewall", "list"):
             seen.add(i)
             out.append(i)
     return out
@@ -266,7 +257,8 @@ def django_meta(site, image_id):
         "constellation": field("Constellation"),
         "type": field("Type"),
         "category": ", ".join(strip_html(c) for c in re.findall(
-            r'href=["\'][^"\']*/images/archive/category/[^"\']*["\'][^>]*>(.*?)</a>', t, re.S)),
+            r'href=["\'][^"\']*/images/archive/category/[^"\']*["\'][^>]*>(.*?)</a>',
+            t.split("About the Object", 1)[-1] if "About the Object" in t else "", re.S)),
         "page_url": page_url,
     }
 
@@ -375,7 +367,7 @@ def queue_items():
 ASTRO_CATEGORY = re.compile(
     r"nebula|galax|star|cluster|solar system|planet|comet|sky|moon|sun|quasar|black hole|"
     r"cosmolog|milky way|aurora|eclipse|supernova|asteroid", re.I)
-BAD_TYPE = re.compile(r"artwork|illustration|chart|animation|graphic|logo", re.I)
+BAD_TYPE = re.compile(r"artwork|illustration|chart|animation|\bgraphic|logo", re.I)
 
 
 def materialize(cand):
