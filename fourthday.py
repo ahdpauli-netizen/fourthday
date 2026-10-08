@@ -202,8 +202,11 @@ def django_ids(site):
     """Image ids from a random page of the site's image archive (and its feed)."""
     base = site["base"]
     ids = []
-    page = random.randint(1, 25)
-    for url in (base + "page/%d/" % page, base):
+    cats = ["galaxies", "nebulae", "starclusters", "stars", "solarsystem"]
+    random.shuffle(cats)
+    cat = base + "archive/category/%s/" % cats[0]
+    urls = [cat + "page/%d/" % random.randint(2, 6), cat, base + "archive/category/%s/" % cats[1], base]
+    for url in urls:
         try:
             text = get(url).text
         except Exception as e:  # noqa: BLE001
