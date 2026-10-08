@@ -74,30 +74,62 @@ def strip_html(s):
 #   key, source, title, description, credit, image_url, page_url, distance (optional)
 
 
+AGENCY_WORDS = set("""
+nasa esa csa jaxa jpl caltech stsci aura nsf noirlab eso hubble webb jwst chandra spitzer
+sdo soho juno cassini galileo swri msss gsfc msfc goddard marshall ames apl jhuapl
+heritage team image images data processing credit credits and the of a cxc sao mit
+uofa ua arizona university institute science center lab laboratory mission space
+telescope observatory kpno ctio gemini nrao alma desi doe usgs iss expedition crew
+""".split())
+
+
+def is_public_domain(credit, copyright_):
+    """APOD: only images credited to agencies/missions, with no personal copyright."""
+    if strip_html(copyright_) and strip_html(copyright_) != strip_html(credit):
+        return False
+    text = strip_html(credit) + " " + strip_html(copyright_)
+    if re.search(r"copyright|\u00a9|\(c\)", text, re.I):
+        return False
+    words = re.findall(r"[A-Za-z]+", text)
+    return bool(words) and all(w.lower() in AGENCY_WORDS for w in words)
+
+
 def src_apod():
     """NASA APOD via the new science.nasa.gov endpoint. Skips copyrighted images."""
-    page = random.randint(1, 30)
     url = "https://science.nasa.gov/wp-json/wp/v2/apod-basic"
-    items = get(url, params={"per_page": 50, "page": page}).json()
-    if isinstance(items, dict):
-        items = items.get("items") or items.get("data") or []
-    for it in items:
-        if it.get("media_type") != "image" or strip_html(it.get("copyright") or ""):
+    pages = list(range(1, 40))
+    random.shuffle(pages)
+    for page in pages[:6]:
+        try:
+            items = get(url, params={"per_page": 50, "page": page}).json()
+        except Exception as e:  # noqa: BLE001
+            log("  apod page %d: %s" % (page, e))
             continue
-        img = it.get("hdurl") or ""
-        if not re.search(r"\.(jpe?g|png)(\?|$)", img, re.I):
-            continue
-        desc = re.sub(r"^\s*Explanation:\s*", "", strip_html(it.get("explanation")))
-        yield {
-            "key": "apod:%s" % it.get("date"),
-            "source": "NASA APOD",
-            "title": strip_html(it.get("title")),
-            "description": desc,
-            "credit": strip_html(it.get("credit")) or "NASA",
-            "image_url": img,
-            "page_url": it.get("permalink") or it.get("url"),
-            "date": it.get("date"),
-        }
+        if isinstance(items, dict):
+            items = items.get("items") or items.get("data") or []
+        n_img = n_pd = 0
+        for it in items:
+            if it.get("media_type") != "image":
+                continue
+            n_img += 1
+            if not is_public_domain(it.get("credit") or "", it.get("copyright") or ""):
+                continue
+            n_pd += 1
+            img = it.get("hdurl") or it.get("url") or ""
+            if "apod-basic" in img or "/image-article/" in img:
+                continue
+            desc = re.sub(r"^\s*Explanation:\s*", "", strip_html(it.get("explanation")))
+            yield {
+                "key": "apod:%s" % it.get("date"),
+                "source": "NASA APOD",
+                "title": strip_html(it.get("title")),
+                "description": desc,
+                "credit": strip_html(it.get("credit")) or "NASA",
+                "image_url": img,
+                "page_url": it.get("permalink") or it.get("url"),
+                "date": it.get("date"),
+            }
+        log("  apod page %d: %d items, %d images, %d public domain" % (page, len(items), n_img, n_pd))
 
 
 NASA_QUERIES = [
@@ -113,10 +145,19 @@ NASA_BAD = re.compile(
 
 def src_nasa_images():
     """NASA Image and Video Library (public domain, NASA credit)."""
-    q = random.choice(NASA_QUERIES)
-    data = get("https://images-api.nasa.gov/search",
-               params={"q": q, "media_type": "image", "page": random.randint(1, 5)}).json()
-    items = data.get("collection", {}).get("items", [])
+    queries = NASA_QUERIES[:]
+    random.shuffle(queries)
+    items = []
+    for q in queries[:4]:
+        try:
+            data = get("https://images-api.nasa.gov/search",
+                       params={"q": q, "media_type": "image", "page": random.randint(1, 3)}).json()
+        except Exception as e:  # noqa: BLE001
+            log("  nasa search %r: %s" % (q, e))
+            continue
+        found = data.get("collection", {}).get("items", [])
+        log("  nasa search %r: %d results" % (q, len(found)))
+        items += found
     random.shuffle(items)
     for it in items:
         d = (it.get("data") or [{}])[0]
@@ -224,6 +265,8 @@ def django_meta(site, image_id):
         "name": field("Name"),
         "constellation": field("Constellation"),
         "type": field("Type"),
+        "category": ", ".join(strip_html(c) for c in re.findall(
+            r'href=["\'][^"\']*/images/archive/category/[^"\']*["\'][^>]*>(.*?)</a>', t, re.S)),
         "page_url": page_url,
     }
 
@@ -329,38 +372,54 @@ def queue_items():
     return sorted(p for p in QUEUE.glob("*") if (p / "meta.json").exists())
 
 
-def prepare_one(known, rng_sources):
-    for src in rng_sources:
+ASTRO_CATEGORY = re.compile(
+    r"nebula|galax|star|cluster|solar system|planet|comet|sky|moon|sun|quasar|black hole|"
+    r"cosmolog|milky way|aurora|eclipse|supernova|asteroid", re.I)
+BAD_TYPE = re.compile(r"artwork|illustration|chart|animation|graphic|logo", re.I)
+
+
+def materialize(cand):
+    """Fill in metadata, download and check the image. Returns the image, or raises ValueError."""
+    if "lazy_meta" in cand:
+        cand.update(cand.pop("lazy_meta")())
+    if not cand.get("title") or not cand.get("description"):
+        raise ValueError("missing title/description")
+    if NASA_BAD.search(cand["title"]) or BAD_TYPE.search(cand.get("type") or ""):
+        raise ValueError("not an astronomical photo (%s / %s)" % (cand["title"], cand.get("type")))
+    if "category" in cand and not ASTRO_CATEGORY.search(cand["category"] or ""):
+        raise ValueError("category not astronomical (%r)" % cand["category"])
+    url = cand["image_url"]() if callable(cand["image_url"]) else cand["image_url"]
+    if not url:
+        raise ValueError("no image file")
+    cand["image_url"] = url
+    im = download_image(url)
+    w, h = im.size
+    ratio = (w / h) / (TARGET_W / TARGET_H)
+    if min(ratio, 1 / ratio) < MAX_CROP_LOSS:
+        raise ValueError("shape too far from 4:5 (%dx%d)" % (w, h))
+    if min(w, h * TARGET_W / TARGET_H) < MIN_SHORT_SIDE:
+        raise ValueError("too small (%dx%d)" % (w, h))
+    return im
+
+
+def prepare_one(known, sources, tries_per_source=25):
+    for src in sources:
         log("source: %s" % src.__name__)
         try:
+            tries = 0
             for cand in src():
                 if cand["key"] in known:
                     continue
+                tries += 1
+                if tries > tries_per_source:
+                    break
                 try:
-                    if "lazy_meta" in cand:
-                        cand.update(cand.pop("lazy_meta")())
-                    url = cand["image_url"]() if callable(cand["image_url"]) else cand["image_url"]
-                    if not url:
-                        continue
-                    cand["image_url"] = url
-                    if not cand.get("title") or not cand.get("description"):
-                        continue
-                    if NASA_BAD.search(cand["title"]):
-                        continue
-                    im = download_image(url)
-                    w, h = im.size
-                    ratio = (w / h) / (TARGET_W / TARGET_H)
-                    if min(ratio, 1 / ratio) < MAX_CROP_LOSS:
-                        log("  skip %s: shape too far from 4:5 (%dx%d)" % (cand["key"], w, h))
-                        known.add(cand["key"])
-                        continue
-                    if min(w, h * TARGET_W / TARGET_H) < MIN_SHORT_SIDE:
-                        log("  skip %s: too small (%dx%d)" % (cand["key"], w, h))
-                        known.add(cand["key"])
-                        continue
+                    im = materialize(cand)
                 except Exception as e:  # noqa: BLE001
                     log("  skip %s: %s" % (cand["key"], e))
+                    known.add(cand["key"])
                     continue
+                w, h = im.size
                 slug = re.sub(r"[^a-z0-9]+", "-", cand["key"].lower()).strip("-")[:60]
                 stamp = dt.datetime.utcnow().strftime("%Y%m%d%H%M%S")
                 d = QUEUE / ("%s-%s" % (stamp, slug))
@@ -378,21 +437,35 @@ def prepare_one(known, rng_sources):
 
 
 def cmd_selftest(args):
-    """Try every source once and report, without touching the queue."""
+    """Find one usable image per source and report, without touching the queue."""
     ok = 0
+    known = known_keys()
     for src in SOURCES:
+        log("== %s" % src.__name__)
+        found = None
         try:
-            cand = next(iter(src()))
-            if "lazy_meta" in cand:
-                cand.update(cand.pop("lazy_meta")())
-            url = cand["image_url"]() if callable(cand["image_url"]) else cand["image_url"]
-            im = download_image(url)
-            log("OK   %-18s %s | %s | %dx%d | dist=%r | credit=%r | desc=%d chars" % (
-                src.__name__, cand["key"], cand.get("title"), im.size[0], im.size[1],
-                cand.get("distance"), cand.get("credit"), len(cand.get("description") or "")))
-            ok += 1
+            for i, cand in enumerate(src()):
+                if i >= 25:
+                    break
+                if cand["key"] in known:
+                    continue
+                try:
+                    im = materialize(cand)
+                except Exception as e:  # noqa: BLE001
+                    log("  skip %s: %s" % (cand["key"], e))
+                    continue
+                found = (cand, im)
+                break
         except Exception as e:  # noqa: BLE001
-            log("FAIL %-18s %r" % (src.__name__, e))
+            log("  source failed: %r" % e)
+        if found:
+            cand, im = found
+            ok += 1
+            log("OK   %s | %s | %dx%d | dist=%r | type=%r | cat=%r | credit=%r | desc=%d chars" % (
+                cand["key"], cand.get("title"), im.size[0], im.size[1], cand.get("distance"),
+                cand.get("type"), cand.get("category"), cand.get("credit"), len(cand.get("description") or "")))
+        else:
+            log("FAIL %s: nothing usable" % src.__name__)
     log("%d/%d sources working" % (ok, len(SOURCES)))
 
 
