@@ -30,5 +30,7 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 - Portuguese (BR) first, then English. Science content; the Genesis line is optional and light.
 - Facts come from `meta.json` (description, distance). If the distance is not given there, use a well-established value and say "cerca de / about"; if unsure, leave the distance line out.
 - Credit exactly as the source gives it. Always credit ESA, ESO and NOIRLab in full (e.g. "ESA/Webb, NASA & CSA, …"). NASA images: "NASA" plus the named centre or photographer.
+- Read the whole description for extra credit lines (e.g. "Processing: …", "CC-BY …") and include them.
+- When the image is the Sun or the Moon, the Gn 1:16 "luzeiros" line fits especially well.
 - Up to 2,200 characters and 15–20 hashtags (Instagram limit is 30).
 - No links (they are not clickable in Instagram captions).

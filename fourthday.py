@@ -249,6 +249,7 @@ def django_meta(site, image_id):
     if m:
         alt = m.group(1).strip()
         desc = desc[:m.start()].strip()
+    desc = re.split(r"\n\s*(?:Credit:|Usage of |Are you a journalist)", desc)[0].strip()
     if len(desc) < 80 or len(desc) > 8000:
         desc = meta("og:description") or meta("description")
 
