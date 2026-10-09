@@ -133,7 +133,7 @@ NASA_QUERIES = [
 ]
 NASA_BAD = re.compile(
     r"\b(astronaut|engineer|technician|test|launch|rollout|crew|ceremony|history|model|"
-    r"hardware|assembly|poster|logo|annotated|labell?ed|comparison|infographic|"
+    r"hardware|assembly|poster|logo|annotated|labell?ed|comparison|infographic|spectrum|spectra|"
     r"briefing|meeting|clean ?room|mockup|artist|illustration|concept|rendering|"
     r"animation|graphic|chart|diagram)\b", re.I)
 
@@ -383,7 +383,8 @@ def save_history(h):
 
 
 def known_keys():
-    keys = set(load_history()["posted"])
+    h = load_history()
+    keys = set(h["posted"]) | set(h.get("rejected", {}))
     for d in QUEUE.glob("*/meta.json"):
         keys.add(json.loads(d.read_text())["key"])
     return keys
@@ -396,7 +397,7 @@ def queue_items():
 ASTRO_CATEGORY = re.compile(
     r"nebula|galax|star|cluster|solar system|planet|comet|sky|moon|sun|quasar|black hole|"
     r"cosmolog|milky way|aurora|eclipse|supernova|asteroid", re.I)
-BAD_TYPE = re.compile(r"artwork|illustration|chart|animation|\bgraphic|logo", re.I)
+BAD_TYPE = re.compile(r"artwork|illustration|chart|animation|\bgraphic|logo|collage", re.I)
 
 
 def materialize(cand):

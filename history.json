@@ -7,5 +7,9 @@
       "posted_at": "2026-10-09T13:37:25Z",
       "title": "Webb captures the spectacular galactic merger Arp 220"
     }
+  },
+  "rejected": {
+    "esahubble:opo0732a": "multi-panel image with text",
+    "noirlab:noao-arct": "spectrum chart, not a photo"
   }
 }

@@ -27,6 +27,8 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 
 ## Rules
 
+- If a queued image is not a good post (charts, panels with text, B&W), delete its folder and add its key to `rejected` in `history.json` with a short reason, so it never comes back.
+
 - Never a black-and-white image on its own (the script already skips them). Black and white is
   allowed only as the 2nd slide of a carousel: the colour image first, then the same photo in
   black and white to reveal the science behind it (`python fourthday.py carousel queue/<folder>`
