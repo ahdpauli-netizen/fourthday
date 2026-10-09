@@ -246,7 +246,7 @@ def django_meta(site, image_id):
     idx = body.rfind(title) if title else -1
     desc = body[idx + len(title):].strip() if idx >= 0 else ""
     alt = ""
-    m = re.search(r"\[Image Description:(.*?)\]", desc, re.S)
+    m = re.search(r"\[Image Description:(.*?)\]", desc, re.S | re.I)
     if m:
         alt = m.group(1).strip()
         desc = desc[:m.start()].strip()
