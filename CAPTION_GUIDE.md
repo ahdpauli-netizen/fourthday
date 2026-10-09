@@ -27,6 +27,8 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 
 ## Rules
 
+- No ages or "X years ago" for any phenomenon (no "this crater is 200 million years old", "the collision began 700 million years ago", no historical dates). Distances in light-years are fine. Exception: a recent event with a concrete date (e.g. a meteorite that fell on day X), used sparingly so the account never feels like a news feed.
+
 - If a queued image is not a good post (charts, panels with text, B&W), delete its folder and add its key to `rejected` in `history.json` with a short reason, so it never comes back.
 
 - Never a black-and-white image on its own (the script already skips them). Black and white is
