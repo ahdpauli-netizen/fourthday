@@ -14,9 +14,10 @@ on:
   push:
     branches: ["claude/**"]
     paths: ["fourthday.py", ".github/workflows/prepare.yml"]
-  # Turned on in checklist step 9:
-  # schedule:
-  #   - cron: "0 9 * * *"
+  # 07:10 UTC = 4h10 Brasília: keeps 6 images queued (2 days of posts),
+  # before the daily caption task and the first post of the day.
+  schedule:
+    - cron: "10 7 * * *"
 
 permissions:
   contents: write
@@ -39,7 +40,7 @@ jobs:
       - name: Fill the queue
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-        run: python fourthday.py prepare --count "${{ github.event.inputs.count || '1' }}" ${{ github.event.inputs.source && format('--source {0}', github.event.inputs.source) || '' }}
+        run: python fourthday.py prepare --count "${{ github.event.inputs.count || (github.event_name == 'schedule' && '6') || '1' }}" ${{ github.event.inputs.source && format('--source {0}', github.event.inputs.source) || '' }}
       - name: Preview the next post (dry run)
         run: python fourthday.py publish --dry-run || true
       - name: Save to the repository
