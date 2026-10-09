@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:arp220a",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/arp220a.jpg",
+  "title": "Webb captures the spectacular galactic merger Arp 220",
+  "description": "Shining like a brilliant beacon amidst a sea of galaxies, Arp 220 lights up the night sky in this view from the NASA/ESA/CSA James Webb Space Telescope. Actually two spiral galaxies in the process of merging, Arp 220 glows brightest in infrared light, making it an ideal target for Webb. It is an ultra-luminous infrared galaxy (ULIRG) with a luminosity of more than a trillion suns. In comparison, our Milky Way galaxy has a much more modest luminosity of about ten billion suns.\n\nLocated 250 million light-years away in the constellation of Serpens, the Serpent, Arp 220 is the 220th object in Halton Arp’s Atlas of Peculiar Galaxies. It is the nearest ULIRG and the brightest of the three galactic mergers closest to Earth.\n\nThe collision of the two spiral galaxies began about 700 million years ago. It sparked an enormous burst of star formation. About 200 huge star clusters reside in a packed, dusty region about 5,000 light-years across (about 5 percent of the Milky Way’s diameter). The amount of gas in this tiny region is equal to all of the gas in the entire Milky Way galaxy.\n\nPrevious radio telescope observations revealed about 100 supernova remnants in an area of less than 500 light-years. The NASA/ESA Hubble Space Telescope uncovered the cores of the parent galaxies 1,200 light-years apart. Each of the cores has a rotating, star-forming ring blasting out the dazzling infrared light so apparent in this Webb view. This glaring light creates diffraction spikes — the starburst feature that dominates this image.\n\nOn the outskirts of this merger, Webb reveals faint tidal tails, or material drawn off the galaxies by gravity, represented in blue — evidence of the galactic dance that is occurring. Organic material represented in reddish-orange appears in streams and filaments across Arp 220.\n\nWebb viewed Arp 220 with its Near-Infrared Camera (NIRCam) and Mid-Infrared Instrument (MIRI).\n\n[Image description: Dominating the image is an object that appears to be a brilliant, 6-pointed, orange star surrounded by wisps of orange gas and bluish purple nebulosity. In reality it is two colliding galaxies with merging cores. The brilliant light from the star-formation surrounding these cores creates diffraction spikes.]",
+  "credit": "NASA, ESA, CSA, K. Pontoppidan (STScI), A. Pagan (STScI)",
+  "alt_text": "",
+  "distance": "250 million light years",
+  "name": "Arp 220",
+  "constellation": "Serpens Caput",
+  "type": "Observation",
+  "category": "MIRI, NIRCam, Stars",
+  "page_url": "https://esawebb.org/images/arp220a/",
+  "colourfulness": 27.6,
+  "original_size": [
+    3267,
+    3864
+  ],
+  "prepared_at": "2026-10-09T13:22:14Z"
+}

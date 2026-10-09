@@ -1,0 +1,49 @@
+# Keeps the Instagram token alive (it expires 60 days after the last refresh).
+# Runs on the 1st and 15th of each month, and can be run by hand.
+name: Refresh Instagram token
+
+on:
+  workflow_dispatch:
+    inputs:
+      check_only:
+        description: "Only check which account the token belongs to"
+        type: boolean
+        default: false
+  schedule:
+    - cron: "0 12 1,15 * *"
+
+permissions:
+  contents: read
+
+jobs:
+  token:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Check token
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python fourthday.py check-token
+      - name: Refresh token
+        id: refresh
+        if: github.event.inputs.check_only != 'true'
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+        run: python fourthday.py refresh-token
+      # Only needed if Instagram ever hands back a different token string.
+      # Requires a GH_PAT secret (fine-grained token with "Secrets: read and write" on this repo).
+      - name: Store new token
+        if: steps.refresh.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          NEW_TOKEN: ${{ steps.refresh.outputs.new_token }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "::error::Instagram returned a new token but GH_PAT is not set. Generate a new token and update the IG_ACCESS_TOKEN secret."
+            exit 1
+          fi
+          printf '%s' "$NEW_TOKEN" | gh secret set IG_ACCESS_TOKEN --repo "$GITHUB_REPOSITORY"
