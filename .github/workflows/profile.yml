@@ -1,0 +1,27 @@
+# One-off: builds round previews of candidate profile pictures into perfil/out/.
+name: Profile picture previews
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/project-thread-irihvk"]
+    paths: ["perfil/make_previews.py", ".github/workflows/profile.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  previews:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pillow
+      - run: python perfil/make_previews.py
+      - run: |
+          git config user.name "fourthday-bot"
+          git config user.email "fourthday-bot@users.noreply.github.com"
+          git add perfil/out
+          git commit -m "Profile picture previews" && git push
