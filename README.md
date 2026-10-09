@@ -6,7 +6,7 @@
 
 1. **Prepare images** (`.github/workflows/prepare.yml`) picks new images from NASA APOD
    (public-domain ones only), the NASA Image and Video Library, ESA/Webb, ESA/Hubble, ESO and
-   NOIRLab, crops them to 4:5 (1080×1350 JPEG) and stores them in `queue/`.
+   NOIRLab, crops them to 4:5 (1080×1350 JPEG) and stores them in `queue/`. Black-and-white images are skipped.
 2. A caption (`caption.txt`, Portuguese then English) is written for each queued image,
    following [CAPTION_GUIDE.md](CAPTION_GUIDE.md).
 3. **Post to Instagram** (`.github/workflows/post.yml`) publishes the oldest captioned image

@@ -27,6 +27,12 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 
 ## Rules
 
+- Never a black-and-white image on its own (the script already skips them). Black and white is
+  allowed only as the 2nd slide of a carousel: the colour image first, then the same photo in
+  black and white to reveal the science behind it (`python fourthday.py carousel queue/<folder>`
+  creates `image-2.jpg`). Carousels are optional; use one only when the comparison tells something.
+  When there is a 2nd slide, the caption says what it shows ("Arraste para o lado…" / "Swipe…").
+
 - Portuguese (BR) first, then English. Science content; the Genesis line is optional and light.
 - Facts come from `meta.json` (description, distance). If the distance is not given there, use a well-established value and say "cerca de / about"; if unsure, leave the distance line out.
 - Credit exactly as the source gives it. Always credit ESA, ESO and NOIRLab in full (e.g. "ESA/Webb, NASA & CSA, …"). NASA images: "NASA" plus the named centre or photographer.

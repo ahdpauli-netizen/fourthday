@@ -347,6 +347,19 @@ def smart_crop(im, tw=TARGET_W, th=TARGET_H):
     return im.crop((left, top, left + cw, top + ch)).resize((tw, th), Image.LANCZOS)
 
 
+MIN_COLOURFULNESS = 8  # below this the image reads as black and white
+
+
+def colourfulness(im):
+    """Average chroma (max-min channel) over the non-dark pixels. ~0 for black and white.
+
+    Dark sky is ignored so a colourful nebula on a black background still counts as colour."""
+    px = [p for p in im.convert("RGB").resize((256, 256)).getdata() if max(p) > 40]
+    if not px:
+        return 0.0
+    return sum(max(p) - min(p) for p in px) / len(px)
+
+
 def save_jpeg(im, path):
     for q in (92, 88, 82, 75):
         im.save(path, "JPEG", quality=q, optimize=True, progressive=True)
@@ -406,6 +419,10 @@ def materialize(cand):
         raise ValueError("shape too far from 4:5 (%dx%d)" % (w, h))
     if min(w, h * TARGET_W / TARGET_H) < MIN_SHORT_SIDE:
         raise ValueError("too small (%dx%d)" % (w, h))
+    c = colourfulness(im)
+    cand["colourfulness"] = round(c, 1)
+    if c < MIN_COLOURFULNESS:
+        raise ValueError("black and white (colourfulness %.1f)" % c)
     return im
 
 
@@ -468,13 +485,22 @@ def cmd_selftest(args):
         if found:
             cand, im = found
             ok += 1
-            log("OK   %s | %s | %dx%d | dist=%r | type=%r | cat=%r | credit=%r | desc=%d chars" % (
-                cand["key"], cand.get("title"), im.size[0], im.size[1], cand.get("distance"),
+            log("OK   %s | %s | %dx%d | colour=%s | dist=%r | type=%r | cat=%r | credit=%r | desc=%d chars" % (
+                cand["key"], cand.get("title"), im.size[0], im.size[1], cand.get("colourfulness"), cand.get("distance"),
                 cand.get("type"), cand.get("category"), cand.get("credit"), len(cand.get("description") or "")))
             log("     desc: %s..." % (cand.get("description") or "")[:160].replace("\n", " "))
         else:
             log("FAIL %s: nothing usable" % src.__name__)
     log("%d/%d sources working" % (ok, len(SOURCES)))
+
+
+def cmd_carousel(args):
+    """Add a black-and-white copy as the 2nd slide, to reveal the structure behind the colours."""
+    d = ROOT / args.folder
+    im = Image.open(d / "image.jpg").convert("L")
+    im = ImageOps.autocontrast(im, cutoff=0.5).convert("RGB")
+    save_jpeg(im, d / "image-2.jpg")
+    log("added %s" % (d / "image-2.jpg").relative_to(ROOT))
 
 
 def cmd_prepare(args):
@@ -519,6 +545,17 @@ def raw_url(path):
     return "https://raw.githubusercontent.com/%s/%s/%s" % (REPO, BRANCH, path.relative_to(ROOT).as_posix())
 
 
+def wait_container(container):
+    for _ in range(30):
+        st = ig("GET", container, fields="status_code,status").get("status_code")
+        if st == "FINISHED":
+            return
+        if st in ("ERROR", "EXPIRED"):
+            sys.exit("Media container failed: %s" % st)
+        time.sleep(5)
+    sys.exit("Media container not ready after 150 s")
+
+
 def cmd_publish(args):
     items = [d for d in queue_items() if (d / "caption.txt").exists()]
     if not items:
@@ -530,22 +567,27 @@ def cmd_publish(args):
         sys.exit("Caption is %d characters; Instagram allows 2200." % len(caption))
     if len(re.findall(r"#\w", caption)) > 30:
         sys.exit("Caption has more than 30 hashtags.")
-    url = raw_url(d / "image.jpg")
-    log("item:    %s\nimage:   %s\nchars:   %d" % (d.name, url, len(caption)))
+    # image.jpg first, then image-2.jpg, image-3.jpg ... (up to 10) for a carousel
+    files = [d / "image.jpg"] + sorted(d.glob("image-[0-9]*.jpg"), key=lambda p: int(p.stem.split("-")[1]))
+    urls = [raw_url(f) for f in files[:10]]
+    log("item:    %s\nimages:  %s\nchars:   %d" % (d.name, "\n         ".join(urls), len(caption)))
     if args.dry_run:
         print("DRY RUN, nothing published.\n\n" + caption)
         return
-    head = session.head(url, timeout=30)
-    if head.status_code != 200:
-        sys.exit("Image URL is not public yet (%s): %s" % (head.status_code, url))
-    container = ig("POST", "%s/media" % IG_USER_ID, image_url=url, caption=caption)["id"]
-    for _ in range(30):
-        st = ig("GET", container, fields="status_code,status").get("status_code")
-        if st == "FINISHED":
-            break
-        if st in ("ERROR", "EXPIRED"):
-            sys.exit("Media container failed: %s" % st)
-        time.sleep(5)
+    for url in urls:
+        head = session.head(url, timeout=30)
+        if head.status_code != 200:
+            sys.exit("Image URL is not public yet (%s): %s" % (head.status_code, url))
+    if len(urls) == 1:
+        container = ig("POST", "%s/media" % IG_USER_ID, image_url=urls[0], caption=caption)["id"]
+    else:
+        children = [ig("POST", "%s/media" % IG_USER_ID, image_url=u, is_carousel_item="true")["id"]
+                    for u in urls]
+        for c in children:
+            wait_container(c)
+        container = ig("POST", "%s/media" % IG_USER_ID, media_type="CAROUSEL",
+                       children=",".join(children), caption=caption)["id"]
+    wait_container(container)
     media_id = ig("POST", "%s/media_publish" % IG_USER_ID, creation_id=container)["id"]
     link = ig("GET", media_id, fields="permalink").get("permalink")
     POSTED.mkdir(exist_ok=True)
@@ -591,11 +633,13 @@ def main():
     pp.add_argument("--count", type=int, default=3)
     pb = sub.add_parser("publish")
     pb.add_argument("--dry-run", action="store_true")
+    pc = sub.add_parser("carousel")
+    pc.add_argument("folder", help="queue/<folder> to add a black-and-white 2nd slide to")
     sub.add_parser("selftest")
     sub.add_parser("refresh-token")
     sub.add_parser("check-token")
     args = p.parse_args()
-    {"prepare": cmd_prepare, "selftest": cmd_selftest, "publish": cmd_publish,
+    {"prepare": cmd_prepare, "selftest": cmd_selftest, "carousel": cmd_carousel, "publish": cmd_publish,
      "refresh-token": cmd_refresh, "check-token": cmd_check}[args.cmd](args)
 
 
