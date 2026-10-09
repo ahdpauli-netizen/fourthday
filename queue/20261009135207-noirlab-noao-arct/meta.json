@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:noao-arct",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/noao-arct.jpg",
+  "title": "High resolution spectrum of Arcturus",
+  "description": "A high resolution version of the spectrum of the prototypical cool giant star Arcturus, also known as alpha Boo (spectral type K1 III). This image was created from a digital atlas observed with the Coude Feed telescope at Kitt Peak National Observatory, near Tucson, Arizona (`Visible and Near Infrared Atlas of the Arcturus Spectrum', by Kenneth Hinkle, Lloyd Wallace, Jeff Valenti and Dianne Harmer, Astronomical Society of the Pacific, 2000). The images shown here were created to mimic an echelle spectrum, with wavelength increasing from left to right along each strip, and from bottom to top. Each of the 50 slices covers 60 angstroms, for a complete spectrum across the visual range from 4000 to 7000 angstroms. This image covers the same wavelength range in the same format as the spectrum of Procyon, type F5, and the spectrum of our own Sun, type G2.",
+  "credit": "N.A. Sharp/NOIRLab/NSF/AURA",
+  "alt_text": "",
+  "distance": "",
+  "name": "Arcturus",
+  "constellation": "",
+  "type": "Observation",
+  "category": "Stars",
+  "page_url": "https://noirlab.edu/public/images/noao-arct/",
+  "colourfulness": 186.3,
+  "original_size": [
+    8192,
+    5464
+  ],
+  "prepared_at": "2026-10-09T13:52:08Z"
+}

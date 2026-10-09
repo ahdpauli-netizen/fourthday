@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso1039a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso1039a.jpg",
+  "title": "Infrared VISTA view of a stellar nursery in Monoceros*",
+  "description": "This dramatic infrared image shows the nearby star formation region Monoceros R2, located some 2700 light-years away in the constellation of Monoceros (the Unicorn). The picture was created from exposures in the near infrared bands Y, J and Ks taken by the VISTA survey telescope at ESO’s Paranal Observatory. Monoceros R2 is an association of massive hot young stars illuminating a beautiful collection of reflection nebulae, embedded in a large molecular cloud.\nThis image is available as a mounted image in the ESOshop.",
+  "credit": "ESO/J. Emerson/VISTA. \nAcknowledgment: Cambridge Astronomical Survey Unit",
+  "alt_text": "",
+  "distance": "2700 light years",
+  "name": "Monoceros R2",
+  "constellation": "Monoceros",
+  "type": "Observation",
+  "category": "Nebulae, Stars",
+  "page_url": "https://www.eso.org/public/images/eso1039a/",
+  "colourfulness": 15.6,
+  "original_size": [
+    10065,
+    7942
+  ],
+  "prepared_at": "2026-10-09T13:52:15Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2617d",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2617d.jpg",
+  "title": "IRS 3 Field (MIRI image)",
+  "description": "This image features data from Webb’s MIRI (Mid Infrared Instrument) to capture the most detailed mid-infrared view yet of the field that hosts the highly evolved star IRS 3, which is located just 0.55 light-years from Sagittarius A*, the Milky Way galaxy's central supermassive black hole. \n\nAn international team of astronomers have discovered that dust and water can form and survive surprisingly close to this supermassive black hole. The observations reveal that the evolved star IRS 3 continues to enrich its surroundings with newly formed material despite the intense radiation environment around Sagittarius A*.\n\nThe data in this image were taken with Webb programmes #3571 (F. Yusef-Zadeh), #2491 (N. B. Sabha), and #2075 (C. Chan).",
+  "credit": "ESA/Webb, NASA & CSA, F. Peißker, F. Yusef-Zadeh, N. B. Sabha, C. Chan",
+  "alt_text": "A bright, densely populated star cluster lies near the centre of the image, surrounded by intricate clouds of glowing gas and dust in shades of red, pink, orange, and blue. Dark lanes of dust weave through the nebula, contrasting with the luminous central region. Countless stars are scattered across the field, with a few brighter foreground stars showing Webb's characteristic diffraction spikes. An irregular black region occupies the lower-right corner of the image, indicating an area where no observational data was available.",
+  "distance": "26000 light years",
+  "name": "Galactic Centre",
+  "constellation": "Sagittarius",
+  "type": "Observation",
+  "category": "MIRI, Stars",
+  "page_url": "https://esawebb.org/images/weic2617d/",
+  "colourfulness": 41.7,
+  "original_size": [
+    3936,
+    3674
+  ],
+  "prepared_at": "2026-10-09T13:49:01Z"
+}
