@@ -8,11 +8,11 @@ on:
         description: "Dry run (show what would be posted, publish nothing)"
         type: boolean
         default: true
-  # Turned on in checklist step 9 (times in UTC; 11/16/23 UTC = 8h/13h/20h Brasília):
-  # schedule:
-  #   - cron: "0 11 * * *"
-  #   - cron: "0 16 * * *"
-  #   - cron: "0 23 * * *"
+  # Times in UTC: 10:30 / 15:30 / 23:30 UTC = 7h30 / 12h30 / 20h30 Brasília
+  schedule:
+    - cron: "30 10 * * *"
+    - cron: "30 15 * * *"
+    - cron: "30 23 * * *"
 
 permissions:
   contents: write
