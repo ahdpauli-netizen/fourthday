@@ -41,6 +41,7 @@ BRANCH = os.environ.get("PUBLISH_BRANCH", "main")
 
 TARGET_W, TARGET_H = 1080, 1350  # 4:5 portrait
 MIN_SHORT_SIDE = 1000
+MIN_DESCRIPTION = 250  # characters of source text needed to write a caption with a curiosity
 MAX_CROP_LOSS = 0.5  # skip images where the 4:5 crop would keep less than half the width/height
 MAX_DOWNLOAD = 80 * 1024 * 1024
 Image.MAX_IMAGE_PIXELS = 400_000_000
@@ -402,8 +403,8 @@ def materialize(cand):
     """Fill in metadata, download and check the image. Returns the image, or raises ValueError."""
     if "lazy_meta" in cand:
         cand.update(cand.pop("lazy_meta")())
-    if not cand.get("title") or not cand.get("description"):
-        raise ValueError("missing title/description")
+    if not cand.get("title") or len(cand.get("description") or "") < MIN_DESCRIPTION:
+        raise ValueError("description too short for a good caption")
     if NASA_BAD.search(cand["title"]) or BAD_TYPE.search(cand.get("type") or ""):
         raise ValueError("not an astronomical photo (%s / %s)" % (cand["title"], cand.get("type")))
     if "category" in cand and not ASTRO_CATEGORY.search(cand["category"] or ""):
@@ -445,12 +446,12 @@ def prepare_one(known, sources, tries_per_source=25):
                     continue
                 w, h = im.size
                 slug = re.sub(r"[^a-z0-9]+", "-", cand["key"].lower()).strip("-")[:60]
-                stamp = dt.datetime.utcnow().strftime("%Y%m%d%H%M%S")
+                stamp = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).strftime("%Y%m%d%H%M%S")
                 d = QUEUE / ("%s-%s" % (stamp, slug))
                 d.mkdir(parents=True)
                 save_jpeg(smart_crop(im), d / "image.jpg")
                 cand["original_size"] = [w, h]
-                cand["prepared_at"] = dt.datetime.utcnow().isoformat(timespec="seconds") + "Z"
+                cand["prepared_at"] = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).isoformat(timespec="seconds") + "Z"
                 (d / "meta.json").write_text(json.dumps(cand, indent=2, ensure_ascii=False) + "\n")
                 known.add(cand["key"])
                 log("  queued %s -> %s" % (cand["key"], d.relative_to(ROOT)))
@@ -509,7 +510,7 @@ def cmd_prepare(args):
     have = len(queue_items())
     made = []
     # Rotate sources so the feed mixes observatories; start after the last one used.
-    order = SOURCES[:]
+    order = [s for s in SOURCES if not args.source or args.source in s.__name__]
     random.shuffle(order)
     while have + len(made) < args.count:
         d = prepare_one(known, order)
@@ -597,7 +598,7 @@ def cmd_publish(args):
     h["posted"][meta["key"]] = {
         "media_id": media_id, "permalink": link, "title": meta.get("title"),
         "folder": str(dest.relative_to(ROOT)),
-        "posted_at": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+        "posted_at": dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).isoformat(timespec="seconds") + "Z",
     }
     save_history(h)
     print("Published: %s" % link)
@@ -631,6 +632,7 @@ def main():
     sub = p.add_subparsers(dest="cmd", required=True)
     pp = sub.add_parser("prepare")
     pp.add_argument("--count", type=int, default=3)
+    pp.add_argument("--source", help="only this source, e.g. apod, nasa, esawebb, esahubble, eso, noirlab")
     pb = sub.add_parser("publish")
     pb.add_argument("--dry-run", action="store_true")
     pc = sub.add_parser("carousel")

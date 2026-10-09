@@ -8,6 +8,9 @@ on:
       count:
         description: "How many images the queue should hold"
         default: "3"
+      source:
+        description: "Only this source (apod, nasa, esawebb, esahubble, eso, noirlab); empty = all"
+        default: ""
   push:
     branches: ["claude/**"]
     paths: ["fourthday.py", ".github/workflows/prepare.yml"]
@@ -36,7 +39,7 @@ jobs:
       - name: Fill the queue
         env:
           NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
-        run: python fourthday.py prepare --count "${{ github.event.inputs.count || '1' }}"
+        run: python fourthday.py prepare --count "${{ github.event.inputs.count || '1' }}" ${{ github.event.inputs.source && format('--source {0}', github.event.inputs.source) || '' }}
       - name: Preview the next post (dry run)
         run: python fourthday.py publish --dry-run || true
       - name: Save to the repository
