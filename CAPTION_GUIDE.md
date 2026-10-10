@@ -20,10 +20,10 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 📏 Distance: <value> light-years
 📷 Credit: <full source credit>
 
-🙏 Princípio: <1–2 frases ligando o que a imagem mostra a uma verdade bíblica.>
+🙏 <1–2 frases ligando o que a imagem mostra a uma verdade bíblica.>
 "<versículo, ARA>" <Ref>
 
-🙏 Principle: <same application in English.>
+🙏 <same application in English.>
 "<verse in English>" <Ref>
 
 #astrofotografia #astrophotography #<object> #<telescope> #space #universo ...
@@ -34,7 +34,9 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 Every post has three parts:
 1. **God's power revealed in creation**: the image and the short description.
 2. **A curiosity** about the object (✨ line).
-3. **A biblical principle applied to the post** (🙏 block). Not a loose verse: 1–2 sentences that
+3. **A biblical principle applied to the post** (🙏 block).
+   The pillars are NOT written as labels in the caption (no "Poder de Deus / Curiosidade / Princípio" headings);
+   only the ✨ Curiosidade label stays. The 🙏 block is plain text, no "Princípio:" label. Not a loose verse: 1–2 sentences that
    take what the image shows and apply it to a biblical truth, then the verse that supports it.
    Any book, Genesis to Revelation (ARA in Portuguese). Vary the verses between posts.
    Adriano's example: stars being born cannot hide inside the dust (Webb sees them in infrared),
