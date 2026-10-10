@@ -628,6 +628,104 @@ def cmd_check(args):
     print(json.dumps(me))
 
 
+# ---------------------------------------------------------------- Insights
+
+INSIGHTS = ROOT / "insights"
+
+
+def ig_try(path, **params):
+    try:
+        return ig("GET", path, **params)
+    except SystemExit as e:
+        log("insights: %s -> %s" % (path, e))
+        return None
+
+
+def total_value(body, name):
+    for m in (body or {}).get("data", []):
+        if m.get("name") == name:
+            if "total_value" in m:
+                return m["total_value"].get("value"), m["total_value"].get("breakdowns")
+            vals = m.get("values") or []
+            return (vals[-1].get("value") if vals else None), None
+    return None, None
+
+
+def cmd_insights(args):
+    """Collect reach of recent posts and of the account; flag weak distribution."""
+    INSIGHTS.mkdir(exist_ok=True)
+    now = dt.datetime.now(dt.timezone.utc)
+    today = now.date().isoformat()
+    me = ig("GET", IG_USER_ID, fields="username,followers_count,follows_count,media_count")
+    followers = int(me.get("followers_count") or 0)
+
+    since = int((now - dt.timedelta(days=1)).timestamp())
+    until = int(now.timestamp())
+    account = {"followers": followers, "media_count": me.get("media_count")}
+    for metric in ("reach", "views", "accounts_engaged", "total_interactions"):
+        body = ig_try("%s/insights" % IG_USER_ID, metric=metric, period="day",
+                      metric_type="total_value", since=since, until=until)
+        account[metric], _ = total_value(body, metric)
+    body = ig_try("%s/insights" % IG_USER_ID, metric="reach", period="day", metric_type="total_value",
+                  breakdown="follow_type", since=since, until=until)
+    _, bd = total_value(body, "reach")
+    for b in bd or []:
+        for r in b.get("results", []):
+            key = (r.get("dimension_values") or ["?"])[0].lower()
+            account["reach_" + key] = r.get("value")
+
+    posts = []
+    h = load_history()
+    for key, p in sorted(h["posted"].items(), key=lambda kv: kv[1]["posted_at"], reverse=True)[:30]:
+        body = ig_try(p["media_id"] + "/insights", metric="reach,views,likes,comments,saved,shares")
+        vals = {m["name"]: (m.get("values") or [{}])[0].get("value") for m in (body or {}).get("data", [])}
+        posted = dt.datetime.fromisoformat(p["posted_at"].rstrip("Z")).replace(tzinfo=dt.timezone.utc)
+        posts.append(dict(key=key, title=p.get("title"), permalink=p.get("permalink"),
+                          posted_at=p["posted_at"], hours=round((now - posted).total_seconds() / 3600), **vals))
+
+    # Daily account snapshots, one per date.
+    daily_path = INSIGHTS / "daily.json"
+    daily = json.loads(daily_path.read_text()) if daily_path.exists() else {}
+    daily[today] = account
+    daily_path.write_text(json.dumps(daily, indent=2, sort_keys=True) + "\n")
+
+    # Alerts. A post "only reached followers" when reach <= followers + 2 after 24 h.
+    alerts = []
+    mature = [p for p in posts if p["hours"] >= 24 and p.get("reach") is not None]
+    if len(mature) >= 3 and all(p["reach"] <= followers + 2 for p in mature[:3]):
+        alerts.append("Os 3 últimos posts (com mais de 24 h) alcançaram %s contas, praticamente só os %d "
+                      "seguidores: o Instagram não está mostrando para quem não segue."
+                      % ("/".join(str(p["reach"]) for p in mature[:3]), followers))
+    days = sorted(daily)
+    week = [daily[d].get("reach") or 0 for d in days[-7:]]
+    prev = [daily[d].get("reach") or 0 for d in days[-14:-7]]
+    if len(days) >= 14 and sum(prev) >= 50 and sum(week) < 0.5 * sum(prev):
+        alerts.append("O alcance da conta nos últimos 7 dias (%d) caiu mais da metade em relação aos 7 "
+                      "dias anteriores (%d)." % (sum(week), sum(prev)))
+
+    state_path = INSIGHTS / "latest.json"
+    old = json.loads(state_path.read_text()) if state_path.exists() else {}
+    last = old.get("last_notified")
+    notify = bool(alerts) and (not last or (now.date() - dt.date.fromisoformat(last)).days >= 3)
+    state = dict(updated_at=now.replace(tzinfo=None).isoformat(timespec="seconds") + "Z",
+                 account=account, posts=posts, alerts=alerts, notify=notify,
+                 last_notified=today if notify else last)
+    state_path.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n")
+
+    lines = ["# Insights @%s (%s)" % (me.get("username"), today), "",
+             "Seguidores: %d · alcance 24 h: %s · não seguidores: %s · visualizações 24 h: %s"
+             % (followers, account.get("reach"), account.get("reach_non_follower"), account.get("views")), "",
+             "| Post | Horas | Alcance | Visualiz. | Curtidas | Coment. | Salvos | Compart. |",
+             "|---|---|---|---|---|---|---|---|"]
+    for p in posts:
+        lines.append("| [%s](%s) | %s | %s | %s | %s | %s | %s | %s |" % (
+            (p["title"] or p["key"])[:50], p["permalink"], p["hours"], p.get("reach"), p.get("views"),
+            p.get("likes"), p.get("comments"), p.get("saved"), p.get("shares")))
+    lines += ["", "Alertas: " + ("; ".join(alerts) if alerts else "nenhum")]
+    (INSIGHTS / "report.md").write_text("\n".join(lines) + "\n")
+    print("\n".join(lines))
+
+
 def main():
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -641,9 +739,10 @@ def main():
     sub.add_parser("selftest")
     sub.add_parser("refresh-token")
     sub.add_parser("check-token")
+    sub.add_parser("insights")
     args = p.parse_args()
     {"prepare": cmd_prepare, "selftest": cmd_selftest, "carousel": cmd_carousel, "publish": cmd_publish,
-     "refresh-token": cmd_refresh, "check-token": cmd_check}[args.cmd](args)
+     "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights}[args.cmd](args)
 
 
 if __name__ == "__main__":
