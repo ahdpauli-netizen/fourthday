@@ -45,15 +45,12 @@ Every post has three parts:
 
 ## Tone of the 🙏 application (Adriano, 2026-10-10)
 
-Intelligent but simple, never a know-it-all; clearly biblical (name the author or book: "Paulo diz…",
-"o salmista…", "Tiago chama Deus de…"); light touches of humour are welcome (it is his profile too).
-Not preachy, academic, formal or "spiritual-sounding" (no priest/pastor/archbishop voice, no
-"irmãos", "amados", "glória", "bênção", no sermon clichés). Start from a smart, concrete detail of
-the image, then turn it to the biblical truth in one simple line. Examples:
-"Urano gira deitado, de lado, e mesmo assim não perde nenhuma das suas luas. Paulo diz que em
-Cristo "tudo subsiste", e isso inclui planeta torto e gente com a vida meio de lado."
-"Duas galáxias bateram de frente e, em vez de dar perda total, viraram uma fábrica de estrelas.
-É a lógica de 2 Coríntios 5: em Cristo, quem parecia perda total vira nova criação."
+Plain and conversational, like a friend pointing something out. Short everyday words.
+Not preachy, not academic, not formal, not "spiritual-sounding" (no priest/pastor/archbishop
+voice, no "irmãos", "amados", "glória", "bênção", no sermon clichés like "as sombras da vida").
+No jokes or humour (Adriano tried it and found it corny). Start from something concrete in the image, then one simple line about God. Example:
+"Urano leva suas luas sem perder nenhuma, todas presas por uma força que ninguém vê.
+Quem segura tudo isso no lugar também segura a sua vida."
 
 ## Rules
 
