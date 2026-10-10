@@ -505,11 +505,34 @@ def cmd_carousel(args):
     log("added %s" % (d / "image-2.jpg").relative_to(ROOT))
 
 
+MINE = ROOT / "mine"
+
+
+def queue_own_photo(known):
+    """Move the next of Adriano's own Seestar photos (mine/<nn>-<slug>/) into the queue."""
+    for d in sorted(p for p in MINE.glob("*") if (p / "meta.json").exists()):
+        meta = json.loads((d / "meta.json").read_text())
+        if meta["key"] in known:
+            continue
+        stamp = dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).strftime("%Y%m%d%H%M%S")
+        dest = QUEUE / ("%s-%s" % (stamp, d.name.split("-", 1)[1]))
+        shutil.move(str(d), str(dest))
+        known.add(meta["key"])
+        log("  queued own photo %s -> %s" % (meta["key"], dest.relative_to(ROOT)))
+        return dest
+    return None
+
+
 def cmd_prepare(args):
     QUEUE.mkdir(exist_ok=True)
     known = known_keys()
     have = len(queue_items())
     made = []
+    # One of Adriano's own photos per daily run, while there are any left.
+    if not args.source and have < args.count:
+        d = queue_own_photo(known)
+        if d:
+            made.append(d)
     # Rotate sources so the feed mixes observatories; start after the last one used.
     order = [s for s in SOURCES if not args.source or args.source in s.__name__]
     random.shuffle(order)

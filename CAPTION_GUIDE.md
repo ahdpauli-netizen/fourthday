@@ -52,6 +52,13 @@ No jokes or humour (Adriano tried it and found it corny). Start from something c
 "Urano leva suas luas sem perder nenhuma, todas presas por uma força que ninguém vê.
 Quem segura tudo isso no lugar também segura a sua vida."
 
+## Adriano's own photos (meta.json has "own_photo": true)
+
+Photos he took with his Seestar S50 telescope (pool in `mine/`, one goes into the queue each day).
+Same caption pattern. The title is in `title_pt`. Credit line:
+"📷 Foto: @fourthday_ · Telescópio Seestar S50" / "📷 Photo: @fourthday_ · Seestar S50 telescope".
+Add #seestar #seestars50 #astrofotografiaamadora #amateurastronomy to the hashtags.
+
 ## Rules
 
 - No ages or "X years ago" for any phenomenon (no "this crater is 200 million years old", "the collision began 700 million years ago", no historical dates). Distances in light-years are fine. Exception: a recent event with a concrete date (e.g. a meteorite that fell on day X), used sparingly so the account never feels like a news feed.

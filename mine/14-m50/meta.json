@@ -1,0 +1,11 @@
+{
+  "key": "mine:m50",
+  "source": "mine",
+  "title": "Open cluster M50",
+  "title_pt": "Aglomerado aberto M50",
+  "description": "A cluster of a few hundred stars in Monoceros, born together from the same cloud. Among the many white and blue stars there are a few orange-red giants, which stand out in colour.",
+  "distance": "about 3,200 light-years",
+  "credit": "Foto: @fourthday_ · Telescópio Seestar S50",
+  "telescope": "Seestar S50",
+  "own_photo": true
+}

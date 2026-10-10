@@ -1,0 +1,11 @@
+{
+  "key": "mine:betelgeuse",
+  "source": "mine",
+  "title": "Betelgeuse",
+  "title_pt": "Betelgeuse",
+  "description": "The red supergiant on Orion's shoulder, one of the brightest stars in the sky. Its orange-red colour shows it is cooler than the Sun, but it is enormous: placed where the Sun is, it would swallow the orbits of Mercury, Venus, Earth and Mars.",
+  "distance": "about 550 light-years",
+  "credit": "Foto: @fourthday_ · Telescópio Seestar S50",
+  "telescope": "Seestar S50",
+  "own_photo": true
+}
