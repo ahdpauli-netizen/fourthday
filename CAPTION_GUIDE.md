@@ -20,10 +20,26 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 📏 Distance: <value> light-years
 📷 Credit: <full source credit>
 
-"E fez também as estrelas." Gn 1:16   (optional, at most one post in three)
+🙏 Princípio: <1–2 frases ligando o que a imagem mostra a uma verdade bíblica.>
+"<versículo, ARA>" <Ref>
+
+🙏 Principle: <same application in English.>
+"<verse in English>" <Ref>
 
 #astrofotografia #astrophotography #<object> #<telescope> #space #universo ...
 ```
+
+## The 3 pillars (Adriano, 2026-10-10)
+
+Every post has three parts:
+1. **God's power revealed in creation**: the image and the short description.
+2. **A curiosity** about the object (✨ line).
+3. **A biblical principle applied to the post** (🙏 block). Not a loose verse: 1–2 sentences that
+   take what the image shows and apply it to a biblical truth, then the verse that supports it.
+   Any book, Genesis to Revelation (ARA in Portuguese). Vary the verses between posts.
+   Adriano's example: stars being born cannot hide inside the dust (Webb sees them in infrared),
+   just as we cannot hide from God's presence; "Para onde me ausentarei do teu Espírito?
+   Para onde fugirei da tua face?" Sl 139:7.
 
 ## Rules
 
@@ -37,10 +53,10 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
   creates `image-2.jpg`). Carousels are optional; use one only when the comparison tells something.
   When there is a 2nd slide, the caption says what it shows ("Arraste para o lado…" / "Swipe…").
 
-- Portuguese (BR) first, then English. Science content; the Genesis line is optional and light.
+- Portuguese (BR) first, then English. Science content, then the applied principle (always present).
 - Facts come from `meta.json` (description, distance). If the distance is not given there, use a well-established value and say "cerca de / about"; if unsure, leave the distance line out.
 - Credit exactly as the source gives it. Always credit ESA, ESO and NOIRLab in full (e.g. "ESA/Webb, NASA & CSA, …"). NASA images: "NASA" plus the named centre or photographer.
 - Read the whole description for extra credit lines (e.g. "Processing: …", "CC-BY …") and include them.
-- When the image is the Sun or the Moon, the Gn 1:16 "luzeiros" line fits especially well.
+- When the image is the Sun or the Moon, Gn 1:16 ("os dois grandes luzeiros") fits especially well as the principle verse.
 - Up to 2,200 characters and 15–20 hashtags (Instagram limit is 30).
 - No links (they are not clickable in Instagram captions).
