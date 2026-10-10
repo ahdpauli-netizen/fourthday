@@ -43,6 +43,15 @@ Every post has three parts:
    just as we cannot hide from God's presence; "Para onde me ausentarei do teu Espírito?
    Para onde fugirei da tua face?" Sl 139:7.
 
+## Tone of the 🙏 application (Adriano, 2026-10-10)
+
+Plain and conversational, like a friend pointing something out. Short everyday words.
+Not preachy, not academic, not formal, not "spiritual-sounding" (no priest/pastor/archbishop
+voice, no "irmãos", "amados", "glória", "bênção", no sermon clichés like "as sombras da vida").
+Start from something concrete in the image, then one simple line about God. Example:
+"Urano leva suas luas sem perder nenhuma, todas presas por uma força que ninguém vê.
+Quem segura tudo isso no lugar também segura a sua vida."
+
 ## Rules
 
 - No ages or "X years ago" for any phenomenon (no "this crater is 200 million years old", "the collision began 700 million years ago", no historical dates). Distances in light-years are fine. Exception: a recent event with a concrete date (e.g. a meteorite that fell on day X), used sparingly so the account never feels like a news feed.
