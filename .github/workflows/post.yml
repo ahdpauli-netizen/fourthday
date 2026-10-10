@@ -8,11 +8,13 @@ on:
         description: "Dry run (show what would be posted, publish nothing)"
         type: boolean
         default: true
-  # Times in UTC: 10:30 / 15:30 / 23:30 UTC = 7h30 / 12h30 / 20h30 Brasília
+  # Posts at 7h30 / 12h00 / 20h00 Brasília (10:30 / 15:00 / 23:00 UTC).
+  # GitHub starts scheduled runs 10-20 min late, so each cron fires 35 min
+  # early and the "Wait for posting time" step sleeps until the exact time.
   schedule:
-    - cron: "30 10 * * *"
-    - cron: "30 15 * * *"
-    - cron: "30 23 * * *"
+    - cron: "55 9 * * *"
+    - cron: "25 14 * * *"
+    - cron: "25 22 * * *"
 
 permissions:
   contents: write
@@ -30,6 +32,19 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
+      - name: Wait for posting time
+        if: github.event_name == 'schedule'
+        run: |
+          now=$(date -u +%s)
+          for hm in 10:30 15:00 23:00; do
+            t=$(date -u -d "today $hm" +%s)
+            wait=$((t - now))
+            if [ $wait -gt 0 ] && [ $wait -le 3600 ]; then
+              echo "Waiting ${wait}s until $hm UTC"
+              sleep $wait
+              break
+            fi
+          done
       - name: Publish
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}

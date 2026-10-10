@@ -19,7 +19,7 @@
 
 - 04h10: **Prepare images** keeps 6 images in `queue/`.
 - 05h40: a Claude routine writes `caption.txt` for queued images that have none.
-- 07h30, 12h30, 20h30: **Post to Instagram** publishes the next captioned image.
+- 07h30, 12h, 20h: **Post to Instagram** publishes the next captioned image.
 
 GitHub may start scheduled runs a few minutes late.
 
