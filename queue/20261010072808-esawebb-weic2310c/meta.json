@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2310c",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2310c.jpg",
+  "title": "Wider view of the Uranian system",
+  "description": "This wider view of the Uranian system with Webb’s NIRCam instrument features the planet Uranus as well as six of its 27 known moons (most of which are too small and faint to be seen in this short exposure). A handful of background objects, including many galaxies, are also seen.",
+  "credit": "NASA, ESA, CSA, STScI, J. DePasquale (STScI)",
+  "alt_text": "The planet Uranus is on a black background just left of centre. Just below the planet at the 7 o’clock position is a faint blue point labeled Puck. Brighter blue points at 8 o’clock, 5 o’clock, and 3 o’clock are labeled Ariel, Miranda, and Umbriel, respectively. Two additional blue points at 7 o’clock and 5 o’clock are labeled Titania and Oberon",
+  "distance": "",
+  "name": "Uranus",
+  "constellation": "",
+  "type": "Planetary",
+  "category": "NIRCam, Solar System",
+  "page_url": "https://esawebb.org/images/weic2310c/",
+  "colourfulness": 45.2,
+  "original_size": [
+    3635,
+    3169
+  ],
+  "prepared_at": "2026-10-10T07:28:08Z"
+}
