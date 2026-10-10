@@ -62,3 +62,4 @@ Every post has three parts:
 - When the image is the Sun or the Moon, Gn 1:16 ("os dois grandes luzeiros") fits especially well as the principle verse.
 - Up to 2,200 characters and 15–20 hashtags (Instagram limit is 30).
 - No links (they are not clickable in Instagram captions).
+- Vary the opening sentence, the 🙏 verse and the hashtag set from post to post (keep a few fixed tags like #fourthday #quartodia, rotate the rest) so captions never read as a template.
