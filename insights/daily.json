@@ -18,11 +18,13 @@
     "views": 0
   },
   "2026-10-12": {
-    "accounts_engaged": 0,
+    "accounts_engaged": 3,
     "followers": 3,
     "media_count": 9,
-    "reach": 0,
-    "total_interactions": 0,
-    "views": 0
+    "reach": 19,
+    "reach_follower": 3,
+    "reach_non_follower": 16,
+    "total_interactions": 16,
+    "views": 56
   }
 }

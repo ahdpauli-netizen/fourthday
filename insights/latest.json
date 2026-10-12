@@ -1,12 +1,14 @@
 {
-  "updated_at": "2026-10-12T08:39:13Z",
+  "updated_at": "2026-10-12T08:42:13Z",
   "account": {
     "followers": 3,
     "media_count": 9,
-    "reach": 0,
-    "views": 0,
-    "accounts_engaged": 0,
-    "total_interactions": 0
+    "reach": 19,
+    "views": 56,
+    "accounts_engaged": 3,
+    "total_interactions": 16,
+    "reach_follower": 3,
+    "reach_non_follower": 16
   },
   "posts": [
     {

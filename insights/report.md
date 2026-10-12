@@ -1,6 +1,6 @@
 # Insights @fourthday_ (2026-10-12)
 
-Seguidores: 3 · alcance 24 h: 0 · não seguidores: None · visualizações 24 h: 0
+Seguidores: 3 · alcance (24 h até ontem): 19 · não seguidores: 16 · visualizações: 56
 
 | Post | Horas | Alcance | Visualiz. | Curtidas | Coment. | Salvos | Compart. |
 |---|---|---|---|---|---|---|---|
