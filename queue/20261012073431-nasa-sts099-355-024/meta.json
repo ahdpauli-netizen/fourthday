@@ -1,0 +1,16 @@
+{
+  "key": "nasa:STS099-355-024",
+  "source": "NASA Image Library",
+  "title": "Earth limb views with greenish bands of airglow during STS-99",
+  "description": "STS099-355-024 (11-22 February 2000) -- Two separate atmospheric optical phenomena appear in this 35mm photograph captured from the Space Shuttle Endeavour. The thin greenish band above the horizon is airglow; radiation emitted by the atmosphere from a layer about 30-kilometers thick and about 100-kilometers' altitude. The predominant emission in airglow is the green 5577-Angstrom wavelength emission from atomic oxygen atoms, which is also the predominant emission from the aurora. A yellow-orange color is also seen in airglow, which is the emission of the 5800-Angstrom wavelength from sodium atoms. Airglow is always present in the atmosphere; it results from the recombination of molecules that have been broken apart by solar radiation during the day. But airglow is so faint that it can only be seen at night by looking \"edge on\" at the emission layer, such as the view that astronauts have in Earth orbit. The other phenomenon in the photo appears to be a faint, diffuse red aurora. Red aurora occur from about 200 kilometers to as high as 500 kilometers altitude only in the auroral zones at polar latitudes. They are caused by the emission of 6300- Angstrom wavelength light from oxygen atoms that have been raised to a higher energy level (excited) by collisions with energetic electrons pouring down from the Earth's magnetosphere. The light is emitted when the atoms return to their original unexcited state. With the red light so faint in this picture, scientists are led to believe that the flux density of incoming electrons was small. Also, since there is no green aurora below the red, that indicates that the energy of the incoming electrons was low - higher energy electrons would penetrate deeper into the atmosphere where the green aurora is energized.",
+  "credit": "NASA",
+  "image_url": "https://images-assets.nasa.gov/image/STS099-355-024/STS099-355-024~orig.jpg",
+  "page_url": "https://images.nasa.gov/details/STS099-355-024",
+  "date": "2000-04-06",
+  "colourfulness": 33.9,
+  "original_size": [
+    2890,
+    1899
+  ],
+  "prepared_at": "2026-10-12T07:34:31Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1507c",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1507c.jpg",
+  "title": "Hubble view of green filament in galaxy NGC 5972",
+  "description": "Twisting in the darkness like a disturbed double helix, NGC 5972 exhibits a remarkable structure of ionised gas, which appears to be reeling in space as a result of a huge disturbance of some kind, possibly a merger with another galaxy.\n\nThe sweeping trails of gas — both H-alpha and doubly ionised Oxygen, which would both usually be expected in areas of star creation and destruction — reach out into space far beyond the stars that comprise the main body of the galaxy — so far, in fact, that when the Hubble Space Telescope applied the filter necessary to view the gas, it was unable to fit the entire extent of the clouds within its field of view, as seen in this original image.\n\nAside from its intriguing tendrils, NGC 5972 also plays host to an active galactic nucleus. This means a supermassive black hole resides at the centre of the galaxy, and the accretion disc around this monster’s genocidal jaws is rotated with such ferocity that twin beams of plasma are ejected in opposite directions out into the depths of space at close to the speed of light. Because of the vast sums of energy involved, this process can be imaged most effectively in the radio wavelengths, and doing so produces images of structures that are of indescribable magnitudes. Cygnus A provides perhaps the best illustration of this, as seen in this image taken by the NRAO Very Large Array, where the nucleus of the host galaxy appears as nothing more than an insignificant mote of dust, dwarfed by the jets and lobes of highly charged particles protruding outwards with spectacular flamboyance.",
+  "credit": "NASA, ESA, W. Keel (University of Alabama, USA)",
+  "alt_text": "",
+  "distance": "",
+  "name": "NGC 5972",
+  "constellation": "Serpens Caput",
+  "type": "Observation",
+  "category": "Nebulae, Quasars and Black Holes",
+  "page_url": "https://esahubble.org/images/heic1507c/",
+  "colourfulness": 15.1,
+  "original_size": [
+    2001,
+    2001
+  ],
+  "prepared_at": "2026-10-12T07:34:29Z"
+}
