@@ -682,8 +682,9 @@ def cmd_insights(args):
     me = ig("GET", IG_USER_ID, fields="username,followers_count,follows_count,media_count")
     followers = int(me.get("followers_count") or 0)
 
-    since = int((now - dt.timedelta(days=1)).timestamp())
-    until = int(now.timestamp())
+    # Account metrics lag: the last 24 h often read as 0, so use the 24 h before that.
+    since = int((now - dt.timedelta(days=2)).timestamp())
+    until = int((now - dt.timedelta(days=1)).timestamp())
     account = {"followers": followers, "media_count": me.get("media_count")}
     for metric in ("reach", "views", "accounts_engaged", "total_interactions"):
         body = ig_try("%s/insights" % IG_USER_ID, metric=metric, period="day",
@@ -736,7 +737,7 @@ def cmd_insights(args):
     state_path.write_text(json.dumps(state, indent=2, ensure_ascii=False) + "\n")
 
     lines = ["# Insights @%s (%s)" % (me.get("username"), today), "",
-             "Seguidores: %d · alcance 24 h: %s · não seguidores: %s · visualizações 24 h: %s"
+             "Seguidores: %d · alcance (24 h até ontem): %s · não seguidores: %s · visualizações: %s"
              % (followers, account.get("reach"), account.get("reach_non_follower"), account.get("views")), "",
              "| Post | Horas | Alcance | Visualiz. | Curtidas | Coment. | Salvos | Compart. |",
              "|---|---|---|---|---|---|---|---|"]
