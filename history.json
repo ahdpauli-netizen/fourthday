@@ -86,6 +86,7 @@
     }
   },
   "rejected": {
+    "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:opo0732a": "multi-panel image with text",
     "noirlab:noao-arct": "spectrum chart, not a photo"
   }
