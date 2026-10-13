@@ -79,3 +79,4 @@ Add #seestar #seestars50 #astrofotografiaamadora #amateurastronomy to the hashta
 - Up to 2,200 characters and 15–20 hashtags (Instagram limit is 30).
 - No links (they are not clickable in Instagram captions).
 - Vary the opening sentence, the 🙏 verse and the hashtag set from post to post (keep a few fixed tags like #fourthday #quartodia, rotate the rest) so captions never read as a template.
+- Before writing a caption, check the subject against recent posts (history.json titles and the queue). If the same object or the same kind of scene (e.g. aurora from orbit) was posted in the last ~2 weeks, reject it (history.json "rejected") and run Prepare images again with a `source` input so no extra own photo is added.
