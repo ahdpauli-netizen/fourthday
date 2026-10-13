@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1716a",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1716a.jpg",
+  "title": "Result of a galactic crash",
+  "description": "This image, taken with the NASA/ESA Hubble Space Telescope, shows the galaxy NGC 4490. The scattered and warped appearance of the galaxy are the result of a past cosmic collision with another galaxy, NGC 4485 (not visible in this image).\n\nThe extreme tidal forces of the interaction between the two galaxies have carved out the shapes and properties of NGC 4490. Once a barred spiral galaxy, the outlying regions of NGC 4490 have been stretched out, resulting in its nickname of the Cocoon Galaxy.",
+  "credit": "ESA/Hubble & NASA\n\nAcknowledgements: D. Calzetti (UMass) and the LEGUS Team, J. Maund (University of Sheffield), and R. Chandar (University of Toledo)",
+  "alt_text": "",
+  "distance": "25 million light years",
+  "name": "NGC 4490",
+  "constellation": "Canes Venatici",
+  "type": "Observation",
+  "category": "Galaxies",
+  "page_url": "https://esahubble.org/images/heic1716a/",
+  "colourfulness": 16.7,
+  "original_size": [
+    4128,
+    3968
+  ],
+  "prepared_at": "2026-10-13T07:35:28Z"
+}
