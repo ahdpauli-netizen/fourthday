@@ -7,6 +7,9 @@ on:
       query:
         description: "Search text"
         required: true
+      media:
+        description: "image or video"
+        default: "image"
 
 permissions:
   contents: write
@@ -20,7 +23,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install requests
-      - run: python tools/search_nasa.py "${{ github.event.inputs.query }}"
+      - run: python tools/search_nasa.py "${{ github.event.inputs.query }}" "${{ github.event.inputs.media }}"
       - name: Push results to the search branch
         run: |
           git config user.name "fourthday-bot"
