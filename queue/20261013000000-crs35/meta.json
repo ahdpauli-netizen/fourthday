@@ -1,0 +1,43 @@
+{
+  "key": "nasa:NHQ20261013_admin_0005",
+  "source": "NASA Image Library",
+  "title": "NASA’s SpaceX CRS-35 Launch",
+  "description": "The exhaust plumes of a SpaceX Falcon 9 rocket carrying the company’s Dragon spacecraft are seen illuminated by sunlight against the predawn sky during the launch of NASA’s SpaceX CRS-35 mission, Tuesday, Oct. 13, 2026, as seen from Cocoa Beach, Florida. The mission lifted off at 6:33 a.m. EDT from Space Launch Complex 40 at Cape Canaveral Space Force Station, carrying scientific investigations, supplies, and equipment to the International Space Station on SpaceX’s thirty-fifth commercial resupply services mission for NASA. The rocket’s exhaust plumes, illuminated by sunlight against the predawn sky, were visible across the eastern United States. Photo Credit: (NASA/John Kraus)",
+  "credit": "NASA/John Kraus",
+  "slides": [
+    {
+      "nasa_id": "NHQ20261013_admin_0005",
+      "title": "NASA’s SpaceX CRS-35 Launch",
+      "description": "The exhaust plumes of a SpaceX Falcon 9 rocket carrying the company’s Dragon spacecraft are seen illuminated by sunlight against the predawn sky during the launch of NASA’s SpaceX CRS-35 mission, Tuesday, Oct. 13, 2026, as seen from Cocoa Beach, Florida. The mission lifted off at 6:33 a.m. EDT from Space Launch Complex 40 at Cape Canaveral Space Force Station, carrying scientific investigations, supplies, and equipment to the International Space Station on SpaceX’s thirty-fifth commercial resupply services mission for NASA. The rocket’s exhaust plumes, illuminated by sunlight against the predawn sky, were visible across the eastern United States. Photo Credit: (NASA/John Kraus)",
+      "credit": "NASA/John Kraus",
+      "image_url": "https://images-assets.nasa.gov/image/NHQ20261013_admin_0005/NHQ20261013_admin_0005~large.jpg",
+      "original_size": [
+        1280,
+        1920
+      ]
+    },
+    {
+      "nasa_id": "NHQ20261013_admin_0003",
+      "title": "NASA’s SpaceX CRS-35 Launch and International Space Station",
+      "description": "In this 15-second long exposure photograph, the International Space Station is seen as a streak of light during the launch of NASA’s SpaceX CRS-35 mission as the Falcon 9 rocket’s first stage begins its return to Landing Zone 40 for landing and the rocket’s second stage and Dragon spacecraft continue toward orbit, Tuesday, Oct. 13, 2026, as seen from Cocoa Beach, Florida. The mission lifted off at 6:33 a.m. EDT from Space Launch Complex 40 at Cape Canaveral Space Force Station, carrying scientific investigations, supplies, and equipment to the orbital outpost on SpaceX’s thirty-fifth commercial resupply services mission for NASA. The rocket’s exhaust plumes, illuminated by sunlight against the predawn sky, were visible across the eastern United States. Photo Credit: (NASA/John Kraus)",
+      "credit": "NASA/John Kraus",
+      "image_url": "https://images-assets.nasa.gov/image/NHQ20261013_admin_0003/NHQ20261013_admin_0003~large.jpg",
+      "original_size": [
+        1279,
+        1919
+      ]
+    },
+    {
+      "nasa_id": "NHQ20261013_admin_0004",
+      "title": "NASA’s SpaceX CRS-35 Launch",
+      "description": "The exhaust plumes of a SpaceX Falcon 9 rocket carrying the company’s Dragon spacecraft are seen illuminated by sunlight against the predawn sky during the launch of NASA’s SpaceX CRS-35 mission, Tuesday, Oct. 13, 2026, as seen from Cocoa Beach, Florida. Also visible is the Falcon 9 rocket’s first stage performing its reentry burn to prepare for landing at Landing Zone 40 at Cape Canaveral Space Force Station. The mission lifted off at 6:33 a.m. EDT from Space Launch Complex 40 at Cape Canaveral Space Force Station, carrying scientific investigations, supplies, and equipment to the International Space Station on SpaceX’s thirty-fifth commercial resupply services mission for NASA. The rocket’s exhaust plumes, illuminated by sunlight against the predawn sky, were visible across the eastern United States. Photo Credit: (NASA/John Kraus)",
+      "credit": "NASA/John Kraus",
+      "image_url": "https://images-assets.nasa.gov/image/NHQ20261013_admin_0004/NHQ20261013_admin_0004~large.jpg",
+      "original_size": [
+        1920,
+        1280
+      ]
+    }
+  ],
+  "prepared_at": "2026-10-14T00:33:36Z"
+}
