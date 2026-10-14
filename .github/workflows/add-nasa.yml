@@ -1,0 +1,38 @@
+# Manual helper: queue a hand-picked NASA Image Library post (several ids = carousel).
+name: Add NASA post
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "Queue folder name (timestamp prefix sets the order)"
+        required: true
+      ids:
+        description: "NASA ids separated by spaces, one per slide"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fourthday-repo
+  cancel-in-progress: false
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python fourthday.py add-nasa "${{ github.event.inputs.folder }}" ${{ github.event.inputs.ids }}
+      - name: Save to the repository
+        run: |
+          git config user.name "fourthday-bot"
+          git config user.email "fourthday-bot@users.noreply.github.com"
+          git add -A queue
+          git commit -m "Queue hand-picked NASA post"
+          git pull --rebase origin "${GITHUB_REF_NAME}"
+          git push origin "HEAD:${GITHUB_REF_NAME}"

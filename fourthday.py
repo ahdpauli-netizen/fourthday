@@ -462,6 +462,26 @@ def prepare_one(known, sources, tries_per_source=25):
     return None
 
 
+def cmd_add_nasa(args):
+    """Queue a hand-picked post from NASA Image Library ids (several ids = carousel, in that order)."""
+    d = QUEUE / args.folder
+    d.mkdir(parents=True, exist_ok=False)
+    metas = []
+    for n, nasa_id in enumerate(args.ids, 1):
+        d0 = get("https://images-api.nasa.gov/search", params={"nasa_id": nasa_id}).json()["collection"]["items"][0]["data"][0]
+        url = nasa_asset(nasa_id)
+        im = download_image(url)
+        save_jpeg(smart_crop(im), d / ("image.jpg" if n == 1 else "image-%d.jpg" % n))
+        metas.append({"nasa_id": nasa_id, "title": d0.get("title"), "description": strip_html(d0.get("description", "")),
+                      "credit": (d0.get("secondary_creator") or d0.get("photographer") or "NASA").strip(),
+                      "image_url": url, "original_size": list(im.size)})
+        log("  slide %d: %s %s" % (n, nasa_id, im.size))
+    meta = {"key": "nasa:" + args.ids[0], "source": "NASA Image Library", "title": metas[0]["title"],
+            "description": metas[0]["description"], "credit": metas[0]["credit"], "slides": metas,
+            "prepared_at": dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).isoformat(timespec="seconds") + "Z"}
+    (d / "meta.json").write_text(json.dumps(meta, indent=2, ensure_ascii=False) + "\n")
+
+
 def cmd_selftest(args):
     """Find one usable image per source and report, without touching the queue."""
     ok = 0
@@ -764,9 +784,12 @@ def main():
     sub.add_parser("refresh-token")
     sub.add_parser("check-token")
     sub.add_parser("insights")
+    pa = sub.add_parser("add-nasa")
+    pa.add_argument("folder", help="queue folder name; its timestamp prefix sets the posting order")
+    pa.add_argument("ids", nargs="+", help="NASA Image Library ids, one per slide")
     args = p.parse_args()
     {"prepare": cmd_prepare, "selftest": cmd_selftest, "carousel": cmd_carousel, "publish": cmd_publish,
-     "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights}[args.cmd](args)
+     "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights, "add-nasa": cmd_add_nasa}[args.cmd](args)
 
 
 if __name__ == "__main__":
