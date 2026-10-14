@@ -1,0 +1,32 @@
+# Manual helper: search the NASA Image Library and push thumbnails to the "search" branch for review.
+name: Search NASA images
+
+on:
+  workflow_dispatch:
+    inputs:
+      query:
+        description: "Search text"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  search:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python tools/search_nasa.py "${{ github.event.inputs.query }}"
+      - name: Push results to the search branch
+        run: |
+          git config user.name "fourthday-bot"
+          git config user.email "fourthday-bot@users.noreply.github.com"
+          git checkout --orphan search
+          git rm -rq --cached .
+          git add search
+          git commit -qm "Search: ${{ github.event.inputs.query }}"
+          git push -f origin search
