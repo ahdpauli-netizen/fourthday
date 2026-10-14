@@ -666,6 +666,12 @@ def cmd_refresh(args):
             f.write("new_token=%s\nchanged=true\n" % body["access_token"])
 
 
+def cmd_recent(args):
+    """Print the account's latest media as GitHub annotations (readable without the full log)."""
+    for m in ig("GET", "%s/media" % IG_USER_ID, fields="timestamp,permalink,caption", limit=4).get("data", []):
+        print("::notice::%s %s %s" % (m.get("timestamp"), m.get("permalink"), (m.get("caption") or "")[:60].replace("\n", " ")))
+
+
 def cmd_check(args):
     me = ig("GET", "me", fields="user_id,username,account_type")
     print(json.dumps(me))
@@ -784,12 +790,13 @@ def main():
     sub.add_parser("refresh-token")
     sub.add_parser("check-token")
     sub.add_parser("insights")
+    sub.add_parser("recent")
     pa = sub.add_parser("add-nasa")
     pa.add_argument("folder", help="queue folder name; its timestamp prefix sets the posting order")
     pa.add_argument("ids", nargs="+", help="NASA Image Library ids, one per slide")
     args = p.parse_args()
     {"prepare": cmd_prepare, "selftest": cmd_selftest, "carousel": cmd_carousel, "publish": cmd_publish,
-     "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights, "add-nasa": cmd_add_nasa}[args.cmd](args)
+     "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights, "add-nasa": cmd_add_nasa, "recent": cmd_recent}[args.cmd](args)
 
 
 if __name__ == "__main__":
