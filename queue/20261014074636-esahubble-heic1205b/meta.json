@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1205b",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1205b.jpg",
+  "title": "Wide-field view of Messier 9 (ground-based image)",
+  "description": "This image from the Digitized Sky Survey 2 shows a wide-field view of globular cluster Messier 9 and its surroundings, imaged by a ground-based telescope. The dark patches are clouds of interstellar dust. Immediately to the right of Messier 9 is the dark cloud Barnard 64.",
+  "credit": "NASA, ESA, Digitized Sky Survey 2 (Acknowledgement: Davide De Martin)",
+  "alt_text": "",
+  "distance": "25000 light years",
+  "name": "Messier 9",
+  "constellation": "Ophiuchus",
+  "type": "Observation",
+  "category": "Star Clusters",
+  "page_url": "https://esahubble.org/images/heic1205b/",
+  "colourfulness": 9.9,
+  "original_size": [
+    7129,
+    7143
+  ],
+  "prepared_at": "2026-10-14T07:46:37Z"
+}
