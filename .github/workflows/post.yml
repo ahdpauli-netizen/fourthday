@@ -54,7 +54,7 @@ jobs:
             args=""
           else
             args="--dry-run"
-            python fourthday.py recent || true
+            python fourthday.py recent 2>&1 | sed "s/^/::warning::/" || true
           fi
           set +e
           python fourthday.py publish $args 2>&1 | tee out.txt
