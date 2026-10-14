@@ -33,7 +33,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python fourthday.py add-nasa "${{ github.event.inputs.folder }}" ${{ github.event.inputs.ids }} --start "${{ github.event.inputs.video_start }}" --duration "${{ github.event.inputs.video_duration }}"
+      - name: Build the post
+        run: |
+          set -o pipefail
+          python fourthday.py add-nasa "${{ github.event.inputs.folder }}" ${{ github.event.inputs.ids }} --start "${{ github.event.inputs.video_start }}" --duration "${{ github.event.inputs.video_duration }}" 2>&1 | tee out.txt || { echo "::error::$(tail -c 900 out.txt | tr '\n' ' ')"; exit 1; }
       - name: Save to the repository
         run: |
           git config user.name "fourthday-bot"
