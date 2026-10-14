@@ -21,6 +21,7 @@ import os
 import random
 import re
 import shutil
+import subprocess
 import sys
 import time
 import xml.etree.ElementTree as ET
@@ -462,6 +463,31 @@ def prepare_one(known, sources, tries_per_source=25):
     return None
 
 
+def nasa_video(nasa_id):
+    files = [x["href"] for x in get("https://images-api.nasa.gov/asset/%s" % nasa_id).json()["collection"]["items"]]
+    for suffix in ("~large.mp4", "~orig.mp4", "~medium.mp4"):
+        for f in files:
+            if f.lower().endswith(suffix):
+                return f.replace("http://", "https://").replace(" ", "%20")
+    sys.exit("No mp4 found for %s" % nasa_id)
+
+
+def make_video(url, dest, start=0.0, duration=59.0):
+    """Download a video and make an Instagram-ready 4:5 MP4 (H.264/AAC, 1080x1350, <= 60 s)."""
+    src = dest.with_suffix(".src.mp4")
+    with session.get(url, stream=True, timeout=600) as r:
+        r.raise_for_status()
+        with open(src, "wb") as f:
+            for chunk in r.iter_content(1 << 20):
+                f.write(chunk)
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", str(start), "-i", str(src), "-t", str(min(duration, 59)),
+                    "-vf", "crop='min(iw,ih*4/5)':'min(ih,iw*5/4)',scale=1080:1350,fps=30,format=yuv420p",
+                    "-c:v", "libx264", "-preset", "slow", "-crf", "23", "-maxrate", "8M", "-bufsize", "16M",
+                    "-c:a", "aac", "-b:a", "128k", "-ac", "2", "-movflags", "+faststart", str(dest)], check=True)
+    src.unlink()
+    log("  video %s: %.1f MB" % (dest.name, dest.stat().st_size / 1e6))
+
+
 def cmd_add_nasa(args):
     """Queue a hand-picked post from NASA Image Library ids (several ids = carousel, in that order)."""
     d = QUEUE / args.folder
@@ -469,13 +495,21 @@ def cmd_add_nasa(args):
     metas = []
     for n, nasa_id in enumerate(args.ids, 1):
         d0 = get("https://images-api.nasa.gov/search", params={"nasa_id": nasa_id}).json()["collection"]["items"][0]["data"][0]
-        url = nasa_asset(nasa_id)
-        im = download_image(url)
-        save_jpeg(smart_crop(im), d / ("image.jpg" if n == 1 else "image-%d.jpg" % n))
-        metas.append({"nasa_id": nasa_id, "title": d0.get("title"), "description": strip_html(d0.get("description", "")),
-                      "credit": (d0.get("secondary_creator") or d0.get("photographer") or "NASA").strip(),
-                      "image_url": url, "original_size": list(im.size)})
-        log("  slide %d: %s %s" % (n, nasa_id, im.size))
+        info = {"nasa_id": nasa_id, "title": d0.get("title"), "description": strip_html(d0.get("description", "")),
+                "credit": (d0.get("secondary_creator") or d0.get("photographer") or "NASA").strip()}
+        if d0.get("media_type") == "video":
+            if n == 1:
+                sys.exit("The first slide must be a photo.")
+            info["video_url"] = nasa_video(nasa_id)
+            make_video(info["video_url"], d / ("image-%d.mp4" % n), args.start, args.duration)
+            log("  slide %d: video %s" % (n, nasa_id))
+        else:
+            info["image_url"] = nasa_asset(nasa_id)
+            im = download_image(info["image_url"])
+            save_jpeg(smart_crop(im), d / ("image.jpg" if n == 1 else "image-%d.jpg" % n))
+            info["original_size"] = list(im.size)
+            log("  slide %d: %s %s" % (n, nasa_id, im.size))
+        metas.append(info)
     meta = {"key": "nasa:" + args.ids[0], "source": "NASA Image Library", "title": metas[0]["title"],
             "description": metas[0]["description"], "credit": metas[0]["credit"], "slides": metas,
             "prepared_at": dt.datetime.now(dt.timezone.utc).replace(tzinfo=None).isoformat(timespec="seconds") + "Z"}
@@ -590,8 +624,8 @@ def raw_url(path):
     return "https://raw.githubusercontent.com/%s/%s/%s" % (REPO, BRANCH, path.relative_to(ROOT).as_posix())
 
 
-def wait_container(container):
-    for _ in range(30):
+def wait_container(container, tries=30):
+    for _ in range(tries):
         st = ig("GET", container, fields="status_code,status").get("status_code")
         if st == "FINISHED":
             return
@@ -613,7 +647,9 @@ def cmd_publish(args):
     if len(re.findall(r"#\w", caption)) > 30:
         sys.exit("Caption has more than 30 hashtags.")
     # image.jpg first, then image-2.jpg, image-3.jpg ... (up to 10) for a carousel
-    files = [d / "image.jpg"] + sorted(d.glob("image-[0-9]*.jpg"), key=lambda p: int(p.stem.split("-")[1]))
+    # image.jpg first, then image-2.jpg / image-2.mp4, image-3 ... (up to 10) for a carousel
+    files = [d / "image.jpg"] + sorted((p for p in d.glob("image-[0-9]*") if p.suffix in (".jpg", ".mp4")),
+                                       key=lambda p: int(p.stem.split("-")[1]))
     urls = [raw_url(f) for f in files[:10]]
     log("item:    %s\nimages:  %s\nchars:   %d" % (d.name, "\n         ".join(urls), len(caption)))
     if args.dry_run:
@@ -626,10 +662,15 @@ def cmd_publish(args):
     if len(urls) == 1:
         container = ig("POST", "%s/media" % IG_USER_ID, image_url=urls[0], caption=caption)["id"]
     else:
-        children = [ig("POST", "%s/media" % IG_USER_ID, image_url=u, is_carousel_item="true")["id"]
-                    for u in urls]
+        children = []
+        for u in urls:
+            if u.endswith(".mp4"):
+                children.append(ig("POST", "%s/media" % IG_USER_ID, media_type="VIDEO", video_url=u,
+                                   is_carousel_item="true")["id"])
+            else:
+                children.append(ig("POST", "%s/media" % IG_USER_ID, image_url=u, is_carousel_item="true")["id"])
         for c in children:
-            wait_container(c)
+            wait_container(c, tries=120)  # videos take a few minutes to process
         container = ig("POST", "%s/media" % IG_USER_ID, media_type="CAROUSEL",
                        children=",".join(children), caption=caption)["id"]
     wait_container(container)
@@ -793,7 +834,9 @@ def main():
     sub.add_parser("recent")
     pa = sub.add_parser("add-nasa")
     pa.add_argument("folder", help="queue folder name; its timestamp prefix sets the posting order")
-    pa.add_argument("ids", nargs="+", help="NASA Image Library ids, one per slide")
+    pa.add_argument("ids", nargs="+", help="NASA Image Library ids, one per slide (videos allowed after the 1st)")
+    pa.add_argument("--start", type=float, default=0.0, help="video: start second")
+    pa.add_argument("--duration", type=float, default=59.0, help="video: length in seconds (max 59)")
     args = p.parse_args()
     {"prepare": cmd_prepare, "selftest": cmd_selftest, "carousel": cmd_carousel, "publish": cmd_publish,
      "refresh-token": cmd_refresh, "check-token": cmd_check, "insights": cmd_insights, "add-nasa": cmd_add_nasa, "recent": cmd_recent}[args.cmd](args)

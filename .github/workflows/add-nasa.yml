@@ -10,6 +10,12 @@ on:
       ids:
         description: "NASA ids separated by spaces, one per slide"
         required: true
+      video_start:
+        description: "Video slides: start second"
+        default: "0"
+      video_duration:
+        description: "Video slides: length in seconds (max 59)"
+        default: "59"
 
 permissions:
   contents: write
@@ -27,7 +33,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python fourthday.py add-nasa "${{ github.event.inputs.folder }}" ${{ github.event.inputs.ids }}
+      - run: python fourthday.py add-nasa "${{ github.event.inputs.folder }}" ${{ github.event.inputs.ids }} --start "${{ github.event.inputs.video_start }}" --duration "${{ github.event.inputs.video_duration }}"
       - name: Save to the repository
         run: |
           git config user.name "fourthday-bot"
