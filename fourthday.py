@@ -709,6 +709,11 @@ def cmd_refresh(args):
 
 def cmd_recent(args):
     """Print the account's latest media as GitHub annotations (readable without the full log)."""
+    for path, fields in (("me", "user_id,username,account_type"), (IG_USER_ID, "username,followers_count")):
+        try:
+            print("::notice::%s -> %s" % (path, json.dumps(ig("GET", path, fields=fields))))
+        except SystemExit as e:
+            print("::warning::%s -> %s" % (path, e))
     for m in ig("GET", "%s/media" % IG_USER_ID, fields="timestamp,permalink,caption", limit=4).get("data", []):
         print("::notice::%s %s %s" % (m.get("timestamp"), m.get("permalink"), (m.get("caption") or "")[:60].replace("\n", " ")))
 
