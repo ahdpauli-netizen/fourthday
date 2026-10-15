@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso1623a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso1623a.jpg",
+  "title": "Jupiter imaged using the VISIR instrument on the VLT",
+  "description": "In preparation for the imminent arrival of NASA’s Juno spacecraft in July 2016, astronomers used ESO’s Very Large Telescope to obtain spectacular new infrared images of Jupiter using the VISIR instrument. They are part of a campaign to create high-resolution maps of the giant planet to inform the work to be undertaken by Juno over the following months, helping astronomers to better understand the gas giant.\nThis false-colour image was created by selecting and combining the best images obtained from many short VISIR exposures at a wavelength of 5 micrometres.",
+  "credit": "ESO/L. Fletcher",
+  "alt_text": "",
+  "distance": "",
+  "name": "Jupiter",
+  "constellation": "",
+  "type": "Planetary",
+  "category": "Solar System",
+  "page_url": "https://www.eso.org/public/images/eso1623a/",
+  "colourfulness": 134.8,
+  "original_size": [
+    2500,
+    2538
+  ],
+  "prepared_at": "2026-10-15T07:47:31Z"
+}
