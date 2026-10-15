@@ -105,6 +105,13 @@
       "posted_at": "2026-10-14T10:30:13Z",
       "title": "Flame Nebula (NGC 2024)"
     },
+    "mine:ngc3372": {
+      "folder": "posted/20261014074634-ngc3372",
+      "media_id": "18134436121710211",
+      "permalink": "https://www.instagram.com/p/Degv0PAG2kI/",
+      "posted_at": "2026-10-15T10:30:14Z",
+      "title": "Carina Nebula (NGC 3372)"
+    },
     "nasa:PIA19837": {
       "folder": "posted/20261010072804-nasa-pia19837",
       "media_id": "18173652520454917",
@@ -131,7 +138,7 @@
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:opo0732a": "multi-panel image with text",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
-    "noirlab:noao-arct": "spectrum chart, not a photo",
-    "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11"
+    "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11",
+    "noirlab:noao-arct": "spectrum chart, not a photo"
   }
 }
