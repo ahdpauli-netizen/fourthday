@@ -1,0 +1,21 @@
+{
+  "key": "eso:ngc1448-potw",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/ngc1448-potw.jpg",
+  "title": "A supernova duet in NGC 1448",
+  "description": "Portrayed in this beautiful image is the spiral galaxy NGC 1448, with a prominent disc of young and very bright stars surrounding its small, shining core. Located about 60 million light-years away from the Sun, this galaxy has recently been a prolific factory of supernovae, the dramatic explosions that mark the death of stars : after a first one observed in this galaxy in 1983, two more have been discovered during the past decade. \n\n Visible as a red dot inside the disc, in the upper right part of the image, is the supernova observed in 2003 (SN 2003hn), whereas another one, detected in 2001 (SN 2001el), can be noticed as a tiny blue dot in the central part of the image, just below the galaxy’s core. If captured at the peak of the explosion, a supernova might be as bright as the whole galaxy that hosts it. \n\n This image was obtained using the FORS instrument mounted on one of the 8.2-metre telescopes of ESO’s Very Large Telescope on top of Cerro Paranal, Chile. It combines exposures taken through three filters (B, V, R) on several occasions, between July 2002 and the end of November 2003. The field of view is 7 arcminutes.",
+  "credit": "ESO",
+  "alt_text": "",
+  "distance": "60 million light years",
+  "name": "NGC 1448",
+  "constellation": "Horologium",
+  "type": "Observation",
+  "category": "Galaxies, Stars",
+  "page_url": "https://www.eso.org/public/images/ngc1448-potw/",
+  "colourfulness": 17.7,
+  "original_size": [
+    2038,
+    2005
+  ],
+  "prepared_at": "2026-10-16T07:45:14Z"
+}
