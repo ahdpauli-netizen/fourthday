@@ -56,5 +56,15 @@
     "reach_non_follower": 11,
     "total_interactions": 20,
     "views": 59
+  },
+  "2026-10-16": {
+    "accounts_engaged": 4,
+    "followers": 4,
+    "media_count": 21,
+    "reach": 8,
+    "reach_follower": 3,
+    "reach_non_follower": 5,
+    "total_interactions": 10,
+    "views": 41
   }
 }
