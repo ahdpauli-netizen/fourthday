@@ -112,6 +112,13 @@
       "posted_at": "2026-10-14T10:30:13Z",
       "title": "Flame Nebula (NGC 2024)"
     },
+    "mine:ngc2070": {
+      "folder": "posted/20261015074726-ngc2070",
+      "media_id": "18108999800217509",
+      "permalink": "https://www.instagram.com/p/DejUm9hkZwl/",
+      "posted_at": "2026-10-16T10:30:09Z",
+      "title": "Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud"
+    },
     "mine:ngc3372": {
       "folder": "posted/20261014074634-ngc3372",
       "media_id": "18134436121710211",
@@ -151,10 +158,10 @@
   "rejected": {
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:opo0732a": "multi-panel image with text",
+    "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
     "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
