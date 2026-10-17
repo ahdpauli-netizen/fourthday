@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:noao-04493",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/noao-04493.jpg",
+  "title": "NGC 2264, Cone Nebula, Fox Fur Nebula",
+  "description": "This wide-field image of the Christmas Tree Cluster was taken at the National Science Foundation's 0.9-meter telescope on Kitt Peak with the NOAO Mosaic CCD camera. Also known as NGC2264, it is an open cluster of stars embedded in a diffuse nebula. It is located in the constellation of Monoceros, the Unicorn. The image also contains two famous nebula. At the bottom center of the image is the Cone Nebula, and to the upper left is the Fox Fur Nebula. The bright star just above the center of the image is known as S Mon. The gentle arcs in orange and blue near the center of the image are Herbig Haro objects, jets of gas from protostars embedded in the nebula. In this image north is up and east is to the right. This image was created by combining emission-line images in Hydrogen-alpha (red-orange), Oxygen [O III] (light blue) and Sulfur [S II] (blue-violet).",
+  "credit": "T.A. Rector (NRAO/AUI/NSF and NOIRLab/NSF/AURA) and B.A. Wolpa (NOIRLab/NSF/AURA)",
+  "alt_text": "",
+  "distance": "",
+  "name": "Christmas Tree Cluster, Cone Nebula, Fox Fur Nebula, NGC 2264, S Mon",
+  "constellation": "Monoceros",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://noirlab.edu/public/images/noao-04493/",
+  "colourfulness": 66.9,
+  "original_size": [
+    7875,
+    8089
+  ],
+  "prepared_at": "2026-10-17T07:38:11Z"
+}

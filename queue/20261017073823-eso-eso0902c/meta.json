@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso0902c",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso0902c.jpg",
+  "title": "Spiral galaxy NGC 253*",
+  "description": "Measuring 70 000 light-years across and laying 13 million light-years away, the nearly edge-on spiral galaxy NGC 253 is revealed here in an image from the Wide Field Imager (WFI) on the MPG/ESO 2.2-metre telescope at the La Silla Observatory. The image is based on data obtained through four different filters (R, V, H-alpha and OIII). North is up and East to the left. The field of view is 30 arcminutes.",
+  "credit": "ESO",
+  "alt_text": "",
+  "distance": "11 million light years",
+  "name": "NGC 253",
+  "constellation": "Sculptor",
+  "type": "Observation",
+  "category": "Galaxies",
+  "page_url": "https://www.eso.org/public/images/eso0902c/",
+  "colourfulness": 16.4,
+  "original_size": [
+    8285,
+    7510
+  ],
+  "prepared_at": "2026-10-17T07:38:23Z"
+}
