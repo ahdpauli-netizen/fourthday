@@ -133,6 +133,13 @@
       "posted_at": "2026-10-16T10:30:09Z",
       "title": "Tarantula Nebula (NGC 2070) in the Large Magellanic Cloud"
     },
+    "mine:ngc2175": {
+      "folder": "posted/20261018073850-ngc2175",
+      "media_id": "18115771124037365",
+      "permalink": "https://www.instagram.com/p/DeoeM3tkStU/",
+      "posted_at": "2026-10-18T10:30:16Z",
+      "title": "Monkey Head Nebula (NGC 2175)"
+    },
     "mine:ngc2237": {
       "folder": "posted/20261017073807-ngc2237",
       "media_id": "18124441360910641",
@@ -197,10 +204,10 @@
     "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
     "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11",
+    "esawebb:weic2611a": "Another star cluster right after M9 and Omega Centauri",
     "eso:eso0902c": "NGC 253 is in Adriano's own photo pool (mine/12-ngc253)",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "esawebb:weic2611a": "Another star cluster right after M9 and Omega Centauri"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
