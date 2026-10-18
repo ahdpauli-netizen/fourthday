@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2611a",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2611a.jpg",
+  "title": "Bulge fossil fragment Terzan 5 (Webb and Hubble image)",
+  "description": "Terzan 5 is a stellar system orbiting within the Milky Way galaxy’s bulge, which is an incredibly bright, crowded central region of the galaxy. Not only are stars within the bulge tightly packed together — every bit of this region is laced with thick clouds of gas and dust.\n\nThe James Webb and Hubble Space Telescopes joined forces to study Terzan 5. Astronomers already knew that this star cluster was unusual in that it contained two stellar populations of very different ages. New research found strong evidence for two more stellar populations, one that formed 3.8 billion years ago and another only 2.5 billion years ago. The research team also was able to determine the ages of the previously known stellar populations with unprecedented precision, finding that they formed 12.5 billion and 4.7 billion years ago.\n\nThis finding proved that Terzan 5 is not a globular star cluster, as originally classified. Instead, Terzan 5 belongs to a new category, known as a bulge fossil fragment — a self-contained, self-enriching stellar system with multiple star populations of different ages and with different iron abundances.\n\nTerzan 5 is 22,000 light-years away in the constellation Sagittarius. It contains about 2 million times the Sun's mass packed into a stellar system only a few tens of light-years across, making it one of the most massive and densely populated globular-cluster-like systems in the Milky Way.\n\nThis image was created with Hubble data from proposal: 12933 (F. R. Ferraro) and Webb data from proposal: 5502 (F. R. Ferraro).",
+  "credit": "NASA, ESA, CSA, STScI, G. Zullo (University of Bologna), F. R. Ferraro (University of Bologna). Image Processing: A. Pagan (STScI)",
+  "alt_text": "A dramatically crowded starfield that looks like a just-shaken snow globe. The black background of space, which is clearer at the edges, is covered by thousands of tiny white, orange, and blue points of light, which are stars. The stars are most concentrated in the centre, forming a roughly circular orb, and sparser at the edges of the image. Several larger orange stars, particularly those largest near the edges of the frame, have prominent diffraction spikes.",
+  "distance": "",
+  "name": "",
+  "constellation": "Sagittarius",
+  "type": "Observation",
+  "category": "NIRCam, Stars",
+  "page_url": "https://esawebb.org/images/weic2611a/",
+  "colourfulness": 22.0,
+  "original_size": [
+    4144,
+    3031
+  ],
+  "prepared_at": "2026-10-18T07:41:31Z"
+}

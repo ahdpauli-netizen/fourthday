@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1614a",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1614a.jpg",
+  "title": "Moving heart of the Crab Nebula",
+  "description": "While many other images of the famous Crab Nebula have focused on the filaments in the outer part of the nebula, this image shows the very heart of the Crab Nebula including the central neutron star — it is the rightmost of the two bright stars near the centre of this image.\n\nThe rapid motion of the material nearest to the central star is revealed by the subtle rainbow of colours in this time-lapse image, the rainbow effect being due to the movement of material over the time between one image and another.",
+  "credit": "ESA/Hubble & NASAAcknowledgement:",
+  "alt_text": "",
+  "distance": "6500 light years",
+  "name": "Crab Nebula",
+  "constellation": "Taurus",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://esahubble.org/images/heic1614a/",
+  "colourfulness": 34.2,
+  "original_size": [
+    2125,
+    2077
+  ],
+  "prepared_at": "2026-10-18T07:41:35Z"
+}

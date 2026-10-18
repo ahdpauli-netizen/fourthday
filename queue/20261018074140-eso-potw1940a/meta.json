@@ -1,0 +1,21 @@
+{
+  "key": "eso:potw1940a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/potw1940a.jpg",
+  "title": "Once in a blue comet",
+  "description": "This image features a comet located in the outer reaches of the Solar System: comet C/2016 R2 (PANSTARRS). As its name suggests, the comet was discovered in 2016 by the Pan-STARRS telescopes in Hawai’i. The new image seen here was captured by a project based at ESO’s Paranal Observatory in Chile named the Search for habitable Planets EClipsing ULtra-cOOl Stars — or SPECULOOS for short.\nComets are balls of dust, ice, gas and rock. When they pass close to the Sun, their ice warms up, turns to gas, and escapes in a process called “outgassing”. This process forms fuzzy envelopes around the comets’ nucleus, called comas, and distinctive tails. Observations from SPECULOOS show that the tail of C/2016 R2 (PANSTARRS) changes dramatically across a single night, making for a dynamic set of images. The image shown here, and accompanying frames in the time-lapse movie, comprise observations taken on 18 January 2018 during the test phase of SPECULOOS’s Callisto telescope, and were taken when the comet was 2.85 AU from the Sun (1 AU being the Earth-Sun distance) and travelling inwards. \nThis comet is particularly exciting because of the rare compounds and molecules that scientists have detected in its coma: carbon monoxide and nitrogen ions. These compounds give the comet distinctive blue emission lines — so much so that it is nicknamed “the blue comet”. This shy comet only orbits the Sun once every 20 000 years, its most recent approach being in May 2018. This image was taken over a period of time as the telescope tracked the comet’s motion; the bright streaks of light in the background are faraway stars, but the comet and its gaseous coma are all in focus, a testament to the tracking power of SPECULOOS. \nLink:Movie showing changes in the comet’s tail",
+  "credit": "ESO/SPECULOOS Team/E. Jehin",
+  "alt_text": "",
+  "distance": "",
+  "name": "C/2016 R2 (PANSTARRS)",
+  "constellation": "",
+  "type": "Observation",
+  "category": "Solar System",
+  "page_url": "https://www.eso.org/public/images/potw1940a/",
+  "colourfulness": 38.5,
+  "original_size": [
+    1532,
+    1516
+  ],
+  "prepared_at": "2026-10-18T07:41:40Z"
+}
