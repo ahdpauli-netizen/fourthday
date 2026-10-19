@@ -43,14 +43,23 @@ Every post has three parts:
    just as we cannot hide from God's presence; "Para onde me ausentarei do teu Espírito?
    Para onde fugirei da tua face?" Sl 139:7.
 
-## Tone of the 🙏 application (Adriano, 2026-10-10)
+## Voice of the opening line and the 🙏 application (Adriano, 2026-10-19)
 
-Plain and conversational, like a friend pointing something out. Short everyday words.
-Not preachy, not academic, not formal, not "spiritual-sounding" (no priest/pastor/archbishop
-voice, no "irmãos", "amados", "glória", "bênção", no sermon clichés like "as sombras da vida").
-No jokes or humour (Adriano tried it and found it corny). Start from something concrete in the image, then one simple line about God. Example:
-"Urano leva suas luas sem perder nenhuma, todas presas por uma força que ninguém vê.
-Quem segura tudo isso no lugar também segura a sua vida."
+Replaces the 2026-10-10 "plain" tone. Both the opening reflection and the 🙏 block are written in
+Adriano's theological voice:
+- Short, weighty sentences. Inversion of the obvious ("não é X, é Y").
+- One question that provokes the reader.
+- Christ at the center; Scripture as the base (the verse supports the point, not decoration).
+- Images of light, fire and the secret place.
+- A small, elegant dose of irony about human pride. No exaggeration, no sermon tone,
+  never mocking anyone, no jokes or slapstick, no pastor/priest clichés ("irmãos", "amados").
+
+Opening reflection: one short line (PT) right after the 🔭 title and a blank line, before the description;
+the same in English right after the 🇺🇸 title line.
+Example (Crab Nebula):
+"Uma estrela morreu aqui. E ainda não parou de brilhar."
+"🙏 Não é o fim da estrela, é semente. O que sobrou dela acende a nuvem inteira, e Cristo chamou isso
+de grão de trigo. A gente gasta a vida tentando não cair. E se cair for justamente o caminho?" + Jo 12:24.
 
 ## Adriano's own photos (meta.json has "own_photo": true)
 
