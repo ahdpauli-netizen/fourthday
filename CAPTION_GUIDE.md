@@ -48,7 +48,7 @@ Every post has three parts:
 Replaces the 2026-10-10 "plain" tone. Both the opening reflection and the 🙏 block are written in
 Adriano's theological voice:
 - Short, weighty sentences. Inversion of the obvious ("não é X, é Y").
-- One question that provokes the reader.
+- One question that provokes the reader, aimed at them and tied to the verse (e.g. "O que em você ainda precisa cair na terra para dar fruto?"). Adriano rejected a speculative "E se cair for justamente o caminho?".
 - Christ at the center; Scripture as the base (the verse supports the point, not decoration).
 - Images of light, fire and the secret place.
 - A small, elegant dose of irony about human pride. No exaggeration, no sermon tone,
@@ -59,7 +59,7 @@ the same in English right after the 🇺🇸 title line.
 Example (Crab Nebula):
 "Uma estrela morreu aqui. E ainda não parou de brilhar."
 "🙏 Não é o fim da estrela, é semente. O que sobrou dela acende a nuvem inteira, e Cristo chamou isso
-de grão de trigo. A gente gasta a vida tentando não cair. E se cair for justamente o caminho?" + Jo 12:24.
+de grão de trigo. O que em você ainda precisa cair na terra para dar fruto?" + Jo 12:24.
 
 ## Adriano's own photos (meta.json has "own_photo": true)
 
