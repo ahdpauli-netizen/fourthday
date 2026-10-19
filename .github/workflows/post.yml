@@ -33,16 +33,20 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      # Days with no scheduled posts left (Brasília dates, space-separated).
-      - name: Skip listed days
+      # Days with no scheduled posts left (Brasília dates), and single slots
+      # Adriano posts by hand (date_slot, slot = 0730 / 1200 / 2000).
+      - name: Skip listed days and slots
         id: gate
         if: github.event_name == 'schedule'
         env:
           SKIP_DATES: "2026-10-18"
+          SKIP_SLOTS: "2026-10-19_1200"
         run: |
           today=$(TZ=America/Sao_Paulo date +%F)
-          for d in $SKIP_DATES; do
-            if [ "$d" = "$today" ]; then echo "::notice::No posts scheduled for $today"; echo "skip=true" >> "$GITHUB_OUTPUT"; fi
+          hour=$(TZ=America/Sao_Paulo date +%-H)
+          if [ $hour -lt 9 ]; then slot=0730; elif [ $hour -lt 15 ]; then slot=1200; else slot=2000; fi
+          for d in $SKIP_DATES $SKIP_SLOTS; do
+            if [ "$d" = "$today" ] || [ "$d" = "${today}_$slot" ]; then echo "::notice::No automatic post for $today $slot"; echo "skip=true" >> "$GITHUB_OUTPUT"; fi
           done
       - name: Wait for posting time
         if: github.event_name == 'schedule' && steps.gate.outputs.skip != 'true'
