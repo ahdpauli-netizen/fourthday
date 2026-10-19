@@ -28,6 +28,12 @@
       "posted_at": "2026-10-09T15:48:23Z",
       "title": "Manicouagan Impact Crater from Space"
     },
+    "apod:2026-04-13": {
+      "folder": "hold/20261018074130-apod-2026-04-13",
+      "note": "Posted manually by Adriano",
+      "posted_at": "2026-10-19T15:00:00Z",
+      "title": "NGC 602 and Beyond"
+    },
     "esahubble:heic1205b": {
       "folder": "posted/20261014074636-esahubble-heic1205b",
       "media_id": "17994063620846615",
@@ -41,6 +47,13 @@
       "permalink": "https://www.instagram.com/p/DecFH8akUsB/",
       "posted_at": "2026-10-13T15:00:15Z",
       "title": "Hubble view of green filament in galaxy NGC 5972"
+    },
+    "esahubble:heic1614a": {
+      "folder": "posted/20261018074135-esahubble-heic1614a",
+      "media_id": "18118277740978419",
+      "permalink": "https://www.instagram.com/p/DesY00aD4eM/",
+      "posted_at": "2026-10-19T23:00:14Z",
+      "title": "Moving heart of the Crab Nebula"
     },
     "esahubble:heic1716a": {
       "folder": "posted/20261013073528-esahubble-heic1716a",
@@ -202,12 +215,6 @@
       "permalink": "https://www.instagram.com/p/DenPPGsFaGu/",
       "posted_at": "2026-10-17T23:00:14Z",
       "title": "NGC 2264, Cone Nebula, Fox Fur Nebula"
-    },
-    "apod:2026-04-13": {
-      "folder": "hold/20261018074130-apod-2026-04-13",
-      "posted_at": "2026-10-19T15:00:00Z",
-      "title": "NGC 602 and Beyond",
-      "note": "Posted manually by Adriano"
     }
   },
   "rejected": {
