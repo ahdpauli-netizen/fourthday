@@ -773,6 +773,8 @@ def cmd_insights(args):
     posts = []
     h = load_history()
     for key, p in sorted(h["posted"].items(), key=lambda kv: kv[1]["posted_at"], reverse=True)[:30]:
+        if "media_id" not in p:  # posted by hand, no media id recorded
+            continue
         body = ig_try(p["media_id"] + "/insights", metric="reach,views,likes,comments,saved,shares")
         vals = {m["name"]: (m.get("values") or [{}])[0].get("value") for m in (body or {}).get("data", [])}
         posted = dt.datetime.fromisoformat(p["posted_at"].rstrip("Z")).replace(tzinfo=dt.timezone.utc)
