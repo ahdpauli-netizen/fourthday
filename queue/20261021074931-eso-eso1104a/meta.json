@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso1104a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso1104a.jpg",
+  "title": "Wide Field Imager view of the spiral galaxy NGC 3621",
+  "description": "This picture of the spiral galaxy NGC 3621 was taken using the Wide Field Imager (WFI) at ESO’s La Silla Observatory in Chile. NGC 3621 is about 22 million light-years away in the constellation of Hydra (The Sea Snake). It is comparatively bright and can be well seen in moderate-sized telescopes. The data from the Wide Field Imager on the MPG/ESO 2.2-metre telescope at ESO’s La Silla Observatory in Chile used to make this image were selected from the ESO archive by Joe DePasquale as part of the Hidden Treasures competition.",
+  "credit": "ESO and Joe DePasquale",
+  "alt_text": "",
+  "distance": "22 million light years",
+  "name": "NGC 3621",
+  "constellation": "Hydra",
+  "type": "Observation",
+  "category": "Galaxies",
+  "page_url": "https://www.eso.org/public/images/eso1104a/",
+  "colourfulness": 15.5,
+  "original_size": [
+    3530,
+    3124
+  ],
+  "prepared_at": "2026-10-21T07:49:31Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:southernring3",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/southernring3.jpg",
+  "title": "Southern Ring Nebula’s Spokes (NIRCam and MIRI Composite Image)",
+  "description": "This is an image of the Southern Ring Nebula (NGC 3132), captured by the NASA/ESA/CSA James Webb Space Telescope’s Near-Infrared Camera (NIRCam) and Mid-Infrared Instrument (MIRI). The  image combines near- and mid-infrared light from three filters.\n\nWebb’s image traces the star’s scattered outflows that have reached farther into the cosmos. Most of the molecular gas that lies outside the band of cooler gas is also cold. It is also far clumpier, consisting of dense knots of molecular gas that form a halo around the central stars.",
+  "credit": "NASA, ESA, CSA, STScI, O. De Marco (Macquarie University), J. DePasquale (STScI)",
+  "alt_text": "Webb’s view of the Southern Ring Nebula appears as a misshapen oval that is slightly angled from the top left to the bottom right. The image shows one star at the center. A large translucent pink-and-red irregular oval surrounds the central stars.",
+  "distance": "2500 light years",
+  "name": "NGC 3132",
+  "constellation": "Vela",
+  "type": "Observation",
+  "category": "MIRI, Nebulae, NIRCam",
+  "page_url": "https://esawebb.org/images/southernring3/",
+  "colourfulness": 31.2,
+  "original_size": [
+    4990,
+    4977
+  ],
+  "prepared_at": "2026-10-21T07:49:36Z"
+}
