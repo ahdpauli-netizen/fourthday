@@ -202,6 +202,13 @@
       "posted_at": "2026-10-16T23:00:13Z",
       "title": "Omega Centauri (NGC 5139)"
     },
+    "mine:sh2-311": {
+      "folder": "posted/20261020074747-sh2-311",
+      "media_id": "18125037346924015",
+      "permalink": "https://www.instagram.com/p/DewMlerkR8-/",
+      "posted_at": "2026-10-21T10:30:09Z",
+      "title": "Sh2-311 (NGC 2467)"
+    },
     "nasa:PIA19837": {
       "folder": "posted/20261010072804-nasa-pia19837",
       "media_id": "18173652520454917",
@@ -241,6 +248,7 @@
   "rejected": {
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:opo0732a": "multi-panel image with text",
+    "esahubble:opo1633a": "Composite illustration, mostly grey (Europa over pixel data), not a real colour photo",
     "esahubble:opo9930a": "Not a real photo: graphic with text panels",
     "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
@@ -250,7 +258,6 @@
     "nasa:0401554": "Supernova remnant right after the Crab Nebula post (2026-10-19)",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "esahubble:opo1633a": "Composite illustration, mostly grey (Europa over pixel data), not a real colour photo"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
