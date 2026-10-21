@@ -25,7 +25,13 @@ jobs:
       - name: Collect insights
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-        run: python fourthday.py insights
+        run: |
+          set +e
+          python fourthday.py insights 2>&1 | tee out.txt
+          rc=${PIPESTATUS[0]}
+          # Surface the error as an annotation, which can be read without the full log.
+          [ $rc -ne 0 ] && echo "::error::$(tail -c 900 out.txt | tr '\n' ' ')"
+          exit $rc
       - name: Save to the repository
         run: |
           git config user.name "fourthday-bot"
