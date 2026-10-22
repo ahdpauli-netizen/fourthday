@@ -104,6 +104,13 @@
       "posted_at": "2026-10-10T10:44:25Z",
       "title": "Infrared VISTA view of a stellar nursery in Monoceros*"
     },
+    "eso:eso1104a": {
+      "folder": "posted/20261021074931-eso-eso1104a",
+      "media_id": "18103942157353998",
+      "permalink": "https://www.instagram.com/p/DeyxYTsoMBx/",
+      "posted_at": "2026-10-22T10:30:16Z",
+      "title": "Wide Field Imager view of the spiral galaxy NGC 3621"
+    },
     "eso:eso1623a": {
       "folder": "posted/20261015074730-eso-eso1623a",
       "media_id": "18119453029955212",
@@ -260,10 +267,12 @@
     }
   },
   "rejected": {
+    "apod:2025-11-05": "Too many spiral galaxies in a row (NGC 253, NGC 3621, NGC 1097)",
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:opo0732a": "multi-panel image with text",
     "esahubble:opo1633a": "Composite illustration, mostly grey (Europa over pixel data), not a real colour photo",
     "esahubble:opo9930a": "Not a real photo: graphic with text panels",
+    "esawebb:weic2207b": "Southern Ring already queued (southernring3)",
     "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
     "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11",
@@ -272,8 +281,6 @@
     "nasa:0401554": "Supernova remnant right after the Crab Nebula post (2026-10-19)",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "esawebb:weic2207b": "Southern Ring already queued (southernring3)",
-    "apod:2025-11-05": "Too many spiral galaxies in a row (NGC 253, NGC 3621, NGC 1097)"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
