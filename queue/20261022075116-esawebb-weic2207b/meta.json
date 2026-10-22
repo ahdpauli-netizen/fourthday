@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2207b",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2207b.jpg",
+  "title": "Southern Ring Nebula (NIRCam Image)",
+  "description": "The bright star at the centre of NGC 3132, while prominent when viewed by the NASA/ESA/CSA James Webb Telescope in near-infrared light, plays a supporting role in sculpting the surrounding nebula. A second star, barely visible at lower left along one of the bright star’s diffraction spikes, is the nebula’s source. It has ejected at least eight layers of gas and dust over thousands of years.\n\nBut the bright central star visible here has helped ‘stir the pot’, changing the shape of this planetary nebula’s highly intricate rings by creating turbulence. The pair of stars are locked in a tight orbit, which leads the dimmer star to spray ejected material in a range of directions as they orbit one another, resulting in these jagged rings.\n\nHundreds of straight, brightly-lit lines pierce through the rings of gas and dust. These ‘spotlights’ emanate from the bright star and stream through holes in the nebula like sunlight through gaps in a cloud.\n\nBut not all of the starlight can escape. The density of the central region, set off in teal, is reflected by how transparent or opaque it is. Areas that are a deeper teal indicate that the gas and dust are denser — and light is unable to break free.\n\nData from Webb’s Near-Infrared Camera (NIRCam) were used to make this extremely detailed image. It is teeming with scientific information — and research will begin following its release.\n\nThis is not only a crisp image of a planetary nebula — it also shows us objects in the vast expanse of space behind it. The transparent red sections of the planetary nebula — and all the areas outside it — are filled with distant galaxies.\n\nLook for the bright angled line at the upper left. It is not starlight — it is a faraway galaxy seen edge-on. Distant spirals, of many shapes and colours, also dot the scene. Those that are farthest away — or are very dusty — are small and red.\n\nNIRCam was built by a team at the University of Arizona and Lockheed Martin’s Advanced Technology Center.\n\nFor a full array of Webb’s first images and spectra, including downloadable files, please visit: https://esawebb.org/initiatives/webbs-first-images/",
+  "credit": "NASA, ESA, CSA, STScI, and the Webb ERO Production Team",
+  "alt_text": "",
+  "distance": "2500 light years",
+  "name": "NGC 3132",
+  "constellation": "Vela",
+  "type": "Observation",
+  "category": "First Images, Nebulae, NIRCam",
+  "page_url": "https://esawebb.org/images/weic2207b/",
+  "colourfulness": 57.8,
+  "original_size": [
+    4833,
+    4501
+  ],
+  "prepared_at": "2026-10-22T07:51:16Z"
+}

@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2324a",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2324a.jpg",
+  "title": "NGC 346 (MIRI image)",
+  "description": "This new infrared image of NGC 346 from the NASA/ESA/CSA James Webb Space Telescope’s Mid-Infrared Instrument (MIRI) traces emission from cool gas and dust. In this image blue represents silicates and sooty chemical molecules known as polycyclic aromatic hydrocarbons, or PAHs. More diffuse red emission shines from warm dust heated by the brightest and most massive stars in the heart of the region. Bright patches and filaments mark areas with abundant numbers of protostars. \n\nThis image includes 7.7-micron light shown in blue, 10 microns in cyan, 11.3 microns in green, 15 microns in yellow, and 21 microns in red (770W, 1000W, 1130W, 1500W, and 2100W filters, respectively).",
+  "credit": "NASA, ESA, CSA, N. Habel (JPL), P. Kavanagh (Maynooth University)",
+  "alt_text": "The lower half of this image contains arcs of bluish material that form a boat-like shape. One end of these arcs points to the top right of the image, while the other end points toward the bottom left. Another plume of blue filaments expands from the centre to the top left, resembling the mast of a sailboat. Within and extending beyond the boat shape are translucent curtains of pink, which cover most of the image. Stars are noticeably scarce. A couple dozen bright pink patches with six short diffraction spikes are scattered within the blue filaments. Many faint blue dots, or stars, also speckle the background, which is black or dark grey.",
+  "distance": "210000 light years",
+  "name": "",
+  "constellation": "Tucana",
+  "type": "Observation",
+  "category": "MIRI, Nebulae",
+  "page_url": "https://esawebb.org/images/weic2324a/",
+  "colourfulness": 44.0,
+  "original_size": [
+    1851,
+    1932
+  ],
+  "prepared_at": "2026-10-22T07:51:17Z"
+}
