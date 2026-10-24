@@ -265,6 +265,13 @@
       "posted_at": "2026-10-21T10:30:09Z",
       "title": "Sh2-311 (NGC 2467)"
     },
+    "nasa:GSFC_20171208_Archive_e000693": {
+      "folder": "posted/20261023074946-nasa-gsfc-20171208-archive-e000693",
+      "media_id": "18187350868418112",
+      "permalink": "https://www.instagram.com/p/De4Z3l7FDkt/",
+      "posted_at": "2026-10-24T15:00:14Z",
+      "title": "Firework Nova"
+    },
     "nasa:PIA19837": {
       "folder": "posted/20261010072804-nasa-pia19837",
       "media_id": "18173652520454917",
@@ -303,6 +310,7 @@
   },
   "rejected": {
     "apod:2025-11-05": "Too many spiral galaxies in a row (NGC 253, NGC 3621, NGC 1097)",
+    "apod:2025-12-02": "Spiral galaxy right after M74",
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:heic1704c": "Supernova remnant soon after Crab; small composite",
     "esahubble:opo0732a": "multi-panel image with text",
@@ -312,14 +320,13 @@
     "esawebb:weic2207b": "Southern Ring already queued (southernring3)",
     "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
     "esawebb:weic2332b": "Uranus again, posted a Webb Uranus on 2026-10-11",
+    "esawebb:weic2413a": "Deep field too similar to the Earendel field queued the same day",
     "esawebb:weic2602a": "Uranus again, too soon after Webb Uranus posted 2026-10-11",
     "esawebb:weic2611a": "Another star cluster right after M9 and Omega Centauri",
     "eso:eso0902c": "NGC 253 is in Adriano's own photo pool (mine/12-ngc253)",
     "nasa:0401554": "Supernova remnant right after the Crab Nebula post (2026-10-19)",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "esawebb:weic2413a": "Deep field too similar to the Earendel field queued the same day",
-    "apod:2025-12-02": "Spiral galaxy right after M74"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
