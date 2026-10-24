@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic2203a",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic2203a.jpg",
+  "title": "Hubble Finds the Most Distant Star Ever Seen",
+  "description": "With this observation, the NASA/ESA Hubble Space Telescope has established an extraordinary new benchmark: detecting the light of a star that existed within the first billion years after the Universe’s birth in the Big Bang (at a redshift of 6.2) — the most distant individual star ever seen. This sets up a major target for the NASA/ESA/CSA James Webb Space Telescope in its first year.",
+  "credit": "NASA, ESA, B. Welch (JHU), D. Coe (STScI), A. Pagan (STScI)",
+  "alt_text": "",
+  "distance": "",
+  "name": "Distant Star",
+  "constellation": "Cetus",
+  "type": "Observation",
+  "category": "Stars",
+  "page_url": "https://esahubble.org/images/heic2203a/",
+  "colourfulness": 21.2,
+  "original_size": [
+    3816,
+    4757
+  ],
+  "prepared_at": "2026-10-24T07:43:16Z"
+}
