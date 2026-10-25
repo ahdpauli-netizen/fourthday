@@ -8,14 +8,12 @@ on:
         description: "Dry run (show what would be posted, publish nothing)"
         type: boolean
         default: true
-  # Weekdays: 7h30 / 12h00 / 20h00 Brasília (10:30 / 15:00 / 23:00 UTC).
-  # Saturday and Sunday: only 12h00 (Adriano, 2026-10-18).
+  # Only Monday, Wednesday and Friday at 12h00 Brasília (15:00 UTC)
+  # (Adriano, 2026-10-25; replaces the 3-a-day weekday schedule).
   # GitHub starts scheduled runs 10-20 min late, so each cron fires 35 min
   # early and the "Wait for posting time" step sleeps until the exact time.
   schedule:
-    - cron: "55 9 * * 1-5"
-    - cron: "25 14 * * *"
-    - cron: "25 22 * * 1-5"
+    - cron: "25 14 * * 1,3,5"
 
 permissions:
   contents: write
@@ -39,7 +37,7 @@ jobs:
         id: gate
         if: github.event_name == 'schedule'
         env:
-          SKIP_DATES: "2026-10-18"
+          SKIP_DATES: "2026-10-18 2026-10-25"
           SKIP_SLOTS: "2026-10-19_1200"
         run: |
           today=$(TZ=America/Sao_Paulo date +%F)
