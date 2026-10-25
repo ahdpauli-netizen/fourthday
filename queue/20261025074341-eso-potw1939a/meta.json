@@ -1,0 +1,21 @@
+{
+  "key": "eso:potw1939a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/potw1939a.jpg",
+  "title": "ALMA explores a Cosmic Jellyfish",
+  "description": "Using the detailed eyes of the Atacama Large Millimeter/submillimeter Array (ALMA) and ESO’s Very Large Telescope (VLT), astronomers have mapped the intense tails of a cosmic jellyfish: a number of knotty streams of gas spewing outwards from a spiral galaxy named ESO 137-001.\nThis celestial cnidarian is shown here in beautiful detail. The various elements making up this image were captured by different telescopes. The galaxy and its surroundings were imaged by the NASA/ESA Hubble Space Telescope; its tails, which trace streams of hydrogen and show up in hues of bright purple, by the MUSE instrument mounted on the VLT; and bright hotspots of carbon oxide emission from within the system, which show up as flares of orange-red, were spotted by ALMA.\nThese tails are caused by a dramatic phenomenon known as ram-pressure stripping. The space between galaxies in a cluster is not empty, but full of material that acts like a viscous fluid. As a galaxy travels through this resistant environment, gas is stripped out of the galaxy to form a wake that creates beautiful, intricate systems such as that seen here around ESO 137-001 (which resides in the Norma galaxy cluster). The direction and position of the tail shed light on the way in which the galaxy is moving — with galaxies usually falling towards the centre of the cluster itself.\nThis image offers the first high-resolution map of the cold molecular gas lurking within a ram-pressure stripped system. ESO 137-001 is one of the nearest jellyfish galaxies to Earth, and is particularly interesting because its long, extended tails of gas contain features known as ‘fireballs’: bursts of star formation. The precise mechanisms governing how stars form within jellyfish tails are mysterious, and this map thus provides a new window onto the conditions needed for new stars to form in such intense, changeable environments. \nThe ALMA array comprises 66 antennas, and is located on the Chajinator plateau in the Chilean Atacama Desert at an altitude of 5000 metres. ALMA observes the night sky from this remote location to unlock the secrets of how the Universe — and its weird and wonderful residents, ESO 137-001 included — formed and evolved, revealing more about our cosmic origins.",
+  "credit": "ALMA (ESO/NAOJ/NRAO), P. Jachym (Czech Academy of Sciences) et al.",
+  "alt_text": "",
+  "distance": "",
+  "name": "ESO 137-001",
+  "constellation": "Triangulum Australe",
+  "type": "Observation",
+  "category": "Galaxies",
+  "page_url": "https://www.eso.org/public/images/potw1939a/",
+  "colourfulness": 36.9,
+  "original_size": [
+    3350,
+    2291
+  ],
+  "prepared_at": "2026-10-25T07:43:41Z"
+}
