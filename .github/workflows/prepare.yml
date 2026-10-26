@@ -47,7 +47,8 @@ jobs:
         run: |
           git config user.name "fourthday-bot"
           git config user.email "fourthday-bot@users.noreply.github.com"
-          git add -A queue mine history.json
+          git add -A queue history.json
+          git add -A mine 2>/dev/null || true  # mine/ is gone once all own photos are used
           git diff --cached --quiet && { echo "Nothing new"; exit 0; }
           git commit -m "Queue new images"
           git pull --rebase origin "${GITHUB_REF_NAME}"
