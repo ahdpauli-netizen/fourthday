@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso0840a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso0840a.jpg",
+  "title": "Glowing stellar nurseries*",
+  "description": "Colour composite image of RCW120. It reveals how an expanding bubble of ionised gas about ten light-years across is causing the surrounding material to collapse into dense clumps where new stars are then formed. The 870-micron submillimetre-wavelength data were taken with the LABOCA camera on the 12-m Atacama Pathfinder Experiment (APEX) telescope. Here, the submillimetre emission is shown as the blue clouds surrounding the reddish glow of the ionised gas (shown with data from the SuperCosmos H-alpha survey). The image also contains data from the Second Generation Digitized Sky Survey (I-band shown in blue, R-band shown in red).\nThis image is available as a mounted image in the ESOshop",
+  "credit": "ESO/APEX/DSS2/ SuperCosmos/ Deharveng(LAM)/ Zavagno(LAM)",
+  "alt_text": "",
+  "distance": "4500 light years",
+  "name": "RCW120",
+  "constellation": "Scorpius",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://www.eso.org/public/images/eso0840a/",
+  "colourfulness": 28.2,
+  "original_size": [
+    1872,
+    2348
+  ],
+  "prepared_at": "2026-10-27T07:52:26Z"
+}
