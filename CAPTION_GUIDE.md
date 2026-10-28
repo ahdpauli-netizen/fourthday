@@ -8,25 +8,52 @@ Every queued image (`queue/<folder>/`) needs a `caption.txt` before it can be po
 ```
 🔭 <Nome do objeto em português>
 
-<2–3 frases: o que é, onde fica, distância.>
+<1–2 frases: o que é e o que se vê.>
 ✨ Curiosidade: <um fato marcante, em uma frase.>
 
 📏 Distância: <valor> anos-luz
 📷 Crédito: <crédito completo da fonte>
 
 🇺🇸 <Object name in English>
-<Same 2–3 sentences in English.>
+<Same 1–2 sentences in English.>
 ✨ Fun fact: <same fact.>
 📏 Distance: <value> light-years
 📷 Credit: <full source credit>
 
-🙏 <1–2 frases ligando o que a imagem mostra a uma verdade bíblica.>
+🙏 <2–3 linhas curtas: a imagem, a chave do texto bíblico e algo para fazer ou responder hoje.>
 "<versículo, ARA>" <Ref>
 
 🙏 <same application in English.>
 "<verse in English>" <Ref>
 
 #astrofotografia #astrophotography #<object> #<telescope> #space #universo ...
+```
+
+## Short captions, practice and the whole Bible (Adriano, 2026-10-28)
+
+These rules come first; where they conflict with older text in this guide, they win.
+1. **Short.** Description in 1–2 sentences. Opening reflection in one line. The 🙏 block in 2–3 short
+   lines plus the verse. If something can be cut without losing the point, cut it.
+2. **Tone.** The light irony always comes with real biblical depth and a lightness that turns into
+   **practice**: something the reader can do or answer today, never just theory. The verse is the
+   reasoning, not decoration: look for the detail in the text that becomes the key (e.g. with Gideon,
+   the command came BEFORE the fleece, Jz 6:14).
+3. **The whole Bible.** Vary characters and narratives, not only verses about the sky: patriarchs,
+   judges, kings, prophets, women of the Bible, the Gospels, apostles, wisdom books, Revelation.
+   Do not repeat the same character or verse within ~2 weeks (check with `git log --all -S"<ref>"`
+   and by the character's name).
+
+Short example (RCW 120, a bubble whose pressure makes new stars at its edge):
+```
+🔭 RCW 120
+
+O aperto não apagou a luz. Foi nele que ela nasceu.
+Uma estrela quente no centro empurra o gás para fora, e nas bordas comprimidas nascem novas estrelas.
+✨ Curiosidade: o azul é poeira fria, invisível aos olhos, captada pelo telescópio APEX.
+...
+🙏 José foi vendido, preso e esquecido. Só depois disse aos irmãos: "vós intentastes o mal, Deus o tornou em bem".
+Qual aperto de hoje você pode entregar a Deus em vez de ressentir?
+"Vós, na verdade, intentastes o mal contra mim; porém Deus o tornou em bem." Gn 50:20
 ```
 
 ## The 3 pillars (Adriano, 2026-10-10)
@@ -85,7 +112,7 @@ Add #seestar #seestars50 #astrofotografiaamadora #amateurastronomy to the hashta
 - Credit exactly as the source gives it. Always credit ESA, ESO and NOIRLab in full (e.g. "ESA/Webb, NASA & CSA, …"). NASA images: "NASA" plus the named centre or photographer.
 - Read the whole description for extra credit lines (e.g. "Processing: …", "CC-BY …") and include them.
 - When the image is the Sun or the Moon, Gn 1:16 ("os dois grandes luzeiros") fits especially well as the principle verse.
-- Up to 2,200 characters and 15–20 hashtags (Instagram limit is 30).
+- Short (see 2026-10-28 rules); never over 2,200 characters, and 15–20 hashtags (Instagram limit is 30).
 - No links (they are not clickable in Instagram captions).
 - Vary the opening sentence, the 🙏 verse and the hashtag set from post to post (keep a few fixed tags like #fourthday #quartodia, rotate the rest) so captions never read as a template.
 - Before writing a caption, check the subject against recent posts (history.json titles and the queue). If the same object or the same kind of scene (e.g. aurora from orbit) was posted in the last ~2 weeks, reject it (history.json "rejected") and run Prepare images again with a `source` input so no extra own photo is added.
