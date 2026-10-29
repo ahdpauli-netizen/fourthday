@@ -40,7 +40,7 @@ jobs:
         id: gate
         if: github.event_name == 'schedule'
         env:
-          SKIP_DATES: "2026-10-18 2026-10-25"
+          SKIP_DATES: "2026-10-18 2026-10-25 2026-10-30"
           SKIP_SLOTS: "2026-10-19_1200"
         run: |
           today=$(TZ=America/Sao_Paulo date +%F)
