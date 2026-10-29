@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:noirlab2406g",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/noirlab2406g.jpg",
+  "title": "Dark Nebula TGU H1674",
+  "description": "This is the dark nebula TGU H1674. Dark nebulae – or absorption nebulae – are clouds of gas and dust that are so dense they obscure and block visible light, making them appear inky black against the starry background. This object is one of the many cosmic treasures found within the new 1.3 gigapixel Vela Supernova Remnant image, captured with the Department of Energy-fabricated Dark Energy Camera, mounted on the US National Science Foundation's Víctor M. Blanco 4-meter Telescope at Cerro Tololo Inter-American Observatory in Chile, a Program of NSF NOIRLab.",
+  "credit": "CTIO/NOIRLab/DOE/NSF/AURA\nImage Processing: T.A. Rector (University of Alaska Anchorage/NSF NOIRLab), M. Zamani & D. de Martin (NSF NOIRLab)",
+  "alt_text": "",
+  "distance": "",
+  "name": "TGU H1674",
+  "constellation": "Vela",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://noirlab.edu/public/images/noirlab2406g/",
+  "colourfulness": 68.0,
+  "original_size": [
+    1507,
+    1507
+  ],
+  "prepared_at": "2026-10-29T08:52:03Z"
+}
