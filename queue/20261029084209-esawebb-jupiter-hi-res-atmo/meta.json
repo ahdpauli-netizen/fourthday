@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:jupiter-hi-res-atmo",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/jupiter-hi-res-atmo.jpg",
+  "title": "Jupiter and Europa (NIRCam) Commissioning Image",
+  "description": "In this infrared image from the NASA/ESA/CSA James Webb Space Telescope, Jupiter is shown with its moon Europa (left), as seen by the NIRCam instrument 2.12 micron filter. The short-wavelength filter shows distinct bands that encircle the planet.\n\nThe Great Red Spot appears white on the right. The iconic spot appears white in this image because of the way Webb’s infrared image was processed. The dark spot to the left of the Great Red Spot is Europa’s shadow cast on Jupiter. \n\nScientists were especially eager to see these commissioning images because they are proof that Webb can observe the satellites and rings near bright solar system objects such as Jupiter, Saturn, and Mars. Scientists will use Webb to explore the tantalizing question of whether we can see plumes of material spewing out of moons like Europa and Saturn’s moon Enceladus. Webb may be able to see the signatures of plumes depositing material on the surface on Europa.",
+  "credit": "NASA/ESA/CSA/STScI",
+  "alt_text": "",
+  "distance": "",
+  "name": "Jupiter",
+  "constellation": "",
+  "type": "Planetary",
+  "category": "NIRCam, Solar System",
+  "page_url": "https://esawebb.org/images/jupiter-hi-res-atmo/",
+  "colourfulness": 12.5,
+  "original_size": [
+    4000,
+    4000
+  ],
+  "prepared_at": "2026-10-29T08:42:09Z"
+}
