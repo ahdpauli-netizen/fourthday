@@ -307,6 +307,13 @@
       "posted_at": "2026-10-10T15:30:27Z",
       "title": "Exterior view of ISS and Shuttle Atlantis"
     },
+    "noirlab:iotw2537b": {
+      "folder": "posted/20261024074320-noirlab-iotw2537b",
+      "media_id": "18088346915309400",
+      "permalink": "https://www.instagram.com/p/DfPmulsEduO/",
+      "posted_at": "2026-11-02T15:15:10Z",
+      "title": "Act Fast (Like Gemini!)"
+    },
     "noirlab:iotw2544b": {
       "folder": "posted/20261014074640-noirlab-iotw2544b",
       "media_id": "18097789418410547",
@@ -330,6 +337,7 @@
     "esahubble:opo0732a": "multi-panel image with text",
     "esahubble:opo1633a": "Composite illustration, mostly grey (Europa over pixel data), not a real colour photo",
     "esahubble:opo9930a": "Not a real photo: graphic with text panels",
+    "esawebb:jupiter-hi-res-atmo": "Single-filter (near B&W) Jupiter; Jupiter already posted 16/10 and his own Jupiter is queued",
     "esawebb:potm2608c": "Another galaxy in a row; weaker crop",
     "esawebb:weic2207b": "Southern Ring already queued (southernring3)",
     "esawebb:weic2315d": "Orion Nebula again, own M42 posted 2026-10-11",
@@ -339,10 +347,9 @@
     "esawebb:weic2611a": "Another star cluster right after M9 and Omega Centauri",
     "eso:eso0902c": "NGC 253 is in Adriano's own photo pool (mine/12-ngc253)",
     "nasa:0401554": "Supernova remnant right after the Crab Nebula post (2026-10-19)",
+    "nasa:NHQ202207120010": "Photo of a screen at a press event, not an astro photo; Carina also posted by hand 2026-10-29",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "nasa:NHQ202207120010": "Photo of a screen at a press event, not an astro photo; Carina also posted by hand 2026-10-29",
-    "esawebb:jupiter-hi-res-atmo": "Single-filter (near B&W) Jupiter; Jupiter already posted 16/10 and his own Jupiter is queued"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
