@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1517a",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1517a.jpg",
+  "title": "New Hubble view of the Lagoon Nebula",
+  "description": "This new NASA/ESA Hubble Space Telescope image shows the Lagoon Nebula, an object with a deceptively tranquil name. The region is filled with intense winds from hot stars, churning funnels of gas, and energetic star formation, all embedded within an intricate haze of gas and pitch-dark dust.",
+  "credit": "NASA, ESA, J. Trauger (Jet Propulsion Laboratory)",
+  "alt_text": "",
+  "distance": "4500 light years",
+  "name": "Lagoon Nebula",
+  "constellation": "Sagittarius",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://esahubble.org/images/heic1517a/",
+  "colourfulness": 29.2,
+  "original_size": [
+    1273,
+    1694
+  ],
+  "prepared_at": "2026-11-03T08:41:57Z"
+}
