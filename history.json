@@ -28,6 +28,13 @@
       "posted_at": "2026-10-12T10:30:13Z",
       "title": "Planet Earth at Twilight"
     },
+    "apod:2025-03-13": {
+      "folder": "posted/20261025074333-apod-2025-03-13",
+      "media_id": "18119951329777897",
+      "permalink": "https://www.instagram.com/p/DfUwEDxERw8/",
+      "posted_at": "2026-11-04T15:12:56Z",
+      "title": "The Protostars within Lynds 483"
+    },
     "apod:2025-06-29": {
       "folder": "posted/20261018074127-apod-2025-06-29",
       "media_id": "18247284070314596",
@@ -349,8 +356,8 @@
     "nasa:0401554": "Supernova remnant right after the Crab Nebula post (2026-10-19)",
     "nasa:NHQ202207120010": "Photo of a screen at a press event, not an astro photo; Carina also posted by hand 2026-10-29",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
+    "nasa:PIA25725": "Jupiter again (own Jupiter queued, ESO Jupiter 16/10); CC NC SA processing",
     "noirlab:noao-arct": "spectrum chart, not a photo",
-    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "nasa:PIA25725": "Jupiter again (own Jupiter queued, ESO Jupiter 16/10); CC NC SA processing"
+    "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)"
   }
 }
