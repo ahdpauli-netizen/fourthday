@@ -1,0 +1,16 @@
+{
+  "key": "apod:2024-12-26",
+  "source": "NASA APOD",
+  "title": "Grand Spiral NGC 5643",
+  "description": "Viewed face-on, grand spiral galaxy NGC 5643 has a festive appearance in this colorful cosmic portrait . Some 55 million light-years distant, the galaxy extends for over 100,000 light-years, seen within the boundaries of the southern constellation Lupus. Its inner 40,000 light-years are shown in sharp detail in this composite of Hubble Space Telescope image data. The galaxy's magnificent spiral arms wind from a yellowish central region dominated by light from old stars, while the spiral arms themselves are traced by dust lanes, young blue stars and reddish star forming regions. The bright compact core of NGC 5643 is also known as a strong emitter of radio waves and X-rays . In fact, NGC 5643 is one of the closest examples of the Seyfert class of active galaxies, where vast amounts of dust and gas are thought to be falling into a central massive black hole .",
+  "credit": "ESA / Hubble & NASA",
+  "image_url": "https://assets.science.nasa.gov/content/dam/science/cds/apod/apod/2024/december/Hubble_NGC5643_potw2450a.jpg?w=2560&h=2789&fit=clip&crop=faces%2Cfocalpoint",
+  "page_url": "https://science.nasa.gov/image-article/apod-2024-december-26-grand-spiral-ngc-5643/",
+  "date": "2024-12-26",
+  "colourfulness": 26.6,
+  "original_size": [
+    2560,
+    2789
+  ],
+  "prepared_at": "2026-11-05T08:25:10Z"
+}
