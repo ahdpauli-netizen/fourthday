@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:noao0001a",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/noao0001a.jpg",
+  "title": "The Andromeda Galaxy",
+  "description": "This picture shows M31 (NGC 224) and its small companions M32 (NGC 221), lower center, and NGC 205 (sometimes designated M110), to the upper right. The image was made by combining three separate frames derived from photographic plates taken in 1979 at the Burrell Schmidt telescope of the Warner and Swasey Observatory of Case Western Reserve University (CWRU). This telescope is situated on Kitt Peak in southern Arizona, and is shared between CWRU and the national community served by Kitt Peak National Observatory. In order to provide color information, we use photographic plates coated with different emulsions, which are sensitive to different regions of the spectrum, in conjunction with filters which only let pass part of the full range of wavelengths. Three plates having three different combinations of emulsion and filter were digitized for computer use by undergraduate Vanessa Harvey during the summer 1996 Research Experience for Undergraduates (REU) program, funded by the National Science Foundation. The digitization was carried out with Kitt Peak's PDS plate densitometer, a high resolution, photometrically stable, scanner. The three frames approximate the primary colors red, green and blue, from which it was possible to create this estimate of a true color picture. M31 is a large spiral galaxy, very similar in appearance to, and slightly larger than, our own Galaxy, and our closest normal-galaxy companion (the very close Magellanic clouds are classified as irregular galaxies). In fact, from a distant vantage point, Andromeda and the Galaxy would appear as a pair, a binary or double galaxy system, if it were not for the rather smaller, though still significant, spiral galaxy M33. As our nearest neighbor, Andromeda is extremely large on the sky. This picture extends for over two and a quarter degrees, or more than four times the width of the full moon, and still does not include the full extent of M31. M31 is visible to the naked eye, although we can only see the bright inner bulge, and it has therefore been known since at least the year 964AD, when Persian astronomer Al-Sufi described it as a `little cloud'. We can see that the western (right) side of M31 is closer to us, by the fact that the dark dust lanes belonging to the inner spiral arms show up in silhouette against the nucleus on that side only. At the very center of the Andromeda Galaxy is a brilliant point of light, which is a very tightly packed star cluster, but this is not visible in this saturated image. The entire galaxy is rotating in space, with the lower portions approaching while the upper parts recede. The rotation is not completely smooth, showing `bumps' where the spiral arms occur, which are probably due to the spiral density wave that maintains the arms. By applying gravitational theory to this rotation, we can `weigh' M31, and when we do it seems that there may be ten times as much material as we can see in the visible portions of the galaxy, distributed in a huge dark halo. Photographic plates are hardly used in astronomy any more, due to their very low efficiency (a few percent at best) compared to electronic detectors such as charge-coupled devices (CCDs) which can collect more than 50% of the light falling on them. Plates are also less accurate for measuring light intensities, but they can still be of benefit for imaging large areas at one time. Location: 00h 40m 00s +41deg 00min (1950.0), constellation of Andromeda (oddly enough). Distance: approximately 2.2 million light-years. Size: over 65000 light-years across.",
+  "credit": "Bill Schoening, Vanessa Harvey/REU program/NOIRLab/NSF/AURA/",
+  "alt_text": "",
+  "distance": "",
+  "name": "M110, M31, M32, NGC 205, NGC 221, NGC 224",
+  "constellation": "Andromeda",
+  "type": "Observation",
+  "category": "Galaxies",
+  "page_url": "https://noirlab.edu/public/images/noao0001a/",
+  "colourfulness": 17.1,
+  "original_size": [
+    8192,
+    8192
+  ],
+  "prepared_at": "2026-11-07T08:06:14Z"
+}
