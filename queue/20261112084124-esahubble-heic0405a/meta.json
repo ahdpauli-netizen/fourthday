@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic0405a",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic0405a.jpg",
+  "title": "V838 Monocerotis revisited: Space phenomenon imitates art",
+  "description": "\"Starry Night\", Vincent van Gogh's famous painting, is renowned for its bold whorls of light sweeping across a raging night sky. Although this image of the heavens came only from the artist's restless imagination, a new picture from the NASA/ESA Hubble Space Telescope bears remarkable similarities to the van Gogh work, complete with never-before-seen spirals of dust swirling across trillions of kilometres of interstellar space.\n\nThis image, obtained with the Advanced Camera for Surveys on February 8, 2004, is Hubble's latest view of an expanding halo of light around a distant star, named V838 Monocerotis (V838 Mon). The illumination of interstellar dust comes from the red supergiant star at the middle of the image, which gave off a flashbulb-like pulse of light two years ago. V838 Mon is located about 20,000 light-years away from Earth in the direction of the constellation Monoceros, placing the star at the outer edge of our Milky Way galaxy.",
+  "credit": "NASA, the Hubble Heritage Team (AURA/STScI) and ESA",
+  "alt_text": "",
+  "distance": "20000 light years",
+  "name": "IRAS 07015-0346, V838 Mon",
+  "constellation": "Monoceros",
+  "type": "Observation",
+  "category": "Stars",
+  "page_url": "https://esahubble.org/images/heic0405a/",
+  "colourfulness": 47.1,
+  "original_size": [
+    2238,
+    2448
+  ],
+  "prepared_at": "2026-11-12T08:41:24Z"
+}
