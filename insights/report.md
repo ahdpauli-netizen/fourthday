@@ -4,34 +4,34 @@ Seguidores: 64 · alcance (24 h até ontem): 7 · não seguidores: None · visua
 
 | Post | Horas | Alcance | Visualiz. | Curtidas | Coment. | Salvos | Compart. |
 |---|---|---|---|---|---|---|---|
-| [Jupiter and its moons](https://www.instagram.com/p/Dfr7frDoCVV/) | 17 | 6 | 10 | 3 | 0 | 0 | 0 |
-| [Dark Nebula TGU H1674](https://www.instagram.com/p/DfncifeD5UB/) | 59 | 13 | 26 | 3 | 0 | 0 | 0 |
-| [Glowing stellar nurseries*](https://www.instagram.com/p/DfhoXh8m35j/) | 113 | 11 | 24 | 4 | 0 | 0 | 0 |
-| [ALMA explores a Cosmic Jellyfish](https://www.instagram.com/p/DfZ5AlqkfC9/) | 186 | 9 | 14 | 3 | 0 | 0 | 0 |
-| [The Protostars within Lynds 483](https://www.instagram.com/p/DfUwEDxERw8/) | 233 | 11 | 18 | 6 | 0 | 0 | 0 |
-| [Act Fast (Like Gemini!)](https://www.instagram.com/p/DfPmulsEduO/) | 281 | 15 | 24 | 4 | 0 | 0 | 0 |
-| [Hubble Finds the Most Distant Star Ever Seen](https://www.instagram.com/p/DfCugoxG0YD/) | 401 | 14 | 32 | 4 | 0 | 0 | 0 |
-| [Betelgeuse](https://www.instagram.com/p/De9mtOTkYWD/) | 449 | 19 | 36 | 7 | 0 | 0 | 0 |
-| [Firework Nova](https://www.instagram.com/p/De4Z3l7FDkt/) | 498 | 16 | 40 | 6 | 0 | 0 | 0 |
-| [M74: A Grand Design Spiral](https://www.instagram.com/p/De2sAaIj2XY/) | 514 | 15 | 20 | 5 | 0 | 0 | 0 |
-| [Open cluster M50](https://www.instagram.com/p/De11OYjGxS-/) | 522 | 20 | 31 | 7 | 0 | 0 | 0 |
-| [NGC 346 (MIRI image)](https://www.instagram.com/p/De1WLMEES1i/) | 526 | 21 | 32 | 5 | 0 | 0 | 0 |
-| [Galaxy NGC 1097 (Caldwell 67)](https://www.instagram.com/p/De0HNgtFiy_/) | 538 | 32 | 63 | 9 | 1 | 0 | 0 |
-| [Southern Ring Nebula’s Spokes (NIRCam and MIRI Com](https://www.instagram.com/p/DezQR6VICOz/) | 546 | 33 | 56 | 5 | 1 | 0 | 0 |
-| [Wide Field Imager view of the spiral galaxy NGC 36](https://www.instagram.com/p/DeyxYTsoMBx/) | 550 | 36 | 62 | 9 | 1 | 0 | 2 |
-| [Sculptor Galaxy (NGC 253)](https://www.instagram.com/p/DexiagYDtCS/) | 562 | 33 | 65 | 7 | 0 | 0 | 0 |
-| [M16: Pillars of Star Creation](https://www.instagram.com/p/Dewre73FQUp/) | 570 | 48 | 81 | 17 | 3 | 0 | 1 |
-| [Sh2-311 (NGC 2467)](https://www.instagram.com/p/DewMlerkR8-/) | 574 | 35 | 60 | 8 | 1 | 0 | 0 |
-| [Running Chicken Nebula (IC 2944)](https://www.instagram.com/p/Deu9npiiXck/) | 586 | 22 | 33 | 3 | 0 | 0 | 0 |
-| [NGC 604: Giant Stellar Nursery](https://www.instagram.com/p/DeuGsDBlNRL/) | 594 | 22 | 42 | 10 | 0 | 0 | 0 |
-| [Once in a blue comet](https://www.instagram.com/p/DetnymbG5en/) | 598 | 23 | 36 | 9 | 1 | 0 | 0 |
-| [Moving heart of the Crab Nebula](https://www.instagram.com/p/DesY00aD4eM/) | 610 | 21 | 36 | 11 | 0 | 0 | 0 |
-| [Dark Sand Cascades on Mars](https://www.instagram.com/p/DerC_4lkXhA/) | 622 | 31 | 55 | 8 | 3 | 0 | 0 |
-| [Monkey Head Nebula (NGC 2175)](https://www.instagram.com/p/DeoeM3tkStU/) | 646 | 19 | 33 | 9 | 0 | 0 | 0 |
-| [NGC 2264, Cone Nebula, Fox Fur Nebula](https://www.instagram.com/p/DenPPGsFaGu/) | 658 | 22 | 32 | 11 | 0 | 0 | 0 |
-| [Rosette Nebula (NGC 2237)](https://www.instagram.com/p/DemYTczmwV8/) | 666 | 16 | 29 | 8 | 1 | 0 | 0 |
-| [A supernova duet in NGC 1448](https://www.instagram.com/p/Del5Z49lirx/) | 670 | 15 | 18 | 7 | 0 | 0 | 0 |
-| [Omega Centauri (NGC 5139)](https://www.instagram.com/p/DekqcaXgQS7/) | 682 | 13 | 22 | 6 | 0 | 0 | 0 |
-| [Jupiter imaged using the VISIR instrument on the V](https://www.instagram.com/p/DejzgkQIMrl/) | 690 | 20 | 37 | 9 | 1 | 0 | 0 |
+| [Jupiter and its moons](https://www.instagram.com/p/Dfr7frDoCVV/) | 24 | 8 | 17 | 4 | 0 | 0 | 0 |
+| [Dark Nebula TGU H1674](https://www.instagram.com/p/DfncifeD5UB/) | 66 | 13 | 26 | 3 | 0 | 0 | 0 |
+| [Glowing stellar nurseries*](https://www.instagram.com/p/DfhoXh8m35j/) | 120 | 11 | 24 | 4 | 0 | 0 | 0 |
+| [ALMA explores a Cosmic Jellyfish](https://www.instagram.com/p/DfZ5AlqkfC9/) | 192 | 9 | 14 | 3 | 0 | 0 | 0 |
+| [The Protostars within Lynds 483](https://www.instagram.com/p/DfUwEDxERw8/) | 240 | 11 | 18 | 6 | 0 | 0 | 0 |
+| [Act Fast (Like Gemini!)](https://www.instagram.com/p/DfPmulsEduO/) | 288 | 15 | 24 | 4 | 0 | 0 | 0 |
+| [Hubble Finds the Most Distant Star Ever Seen](https://www.instagram.com/p/DfCugoxG0YD/) | 408 | 14 | 32 | 4 | 0 | 0 | 0 |
+| [Betelgeuse](https://www.instagram.com/p/De9mtOTkYWD/) | 456 | 19 | 36 | 7 | 0 | 0 | 0 |
+| [Firework Nova](https://www.instagram.com/p/De4Z3l7FDkt/) | 504 | 16 | 40 | 6 | 0 | 0 | 0 |
+| [M74: A Grand Design Spiral](https://www.instagram.com/p/De2sAaIj2XY/) | 520 | 15 | 20 | 5 | 0 | 0 | 0 |
+| [Open cluster M50](https://www.instagram.com/p/De11OYjGxS-/) | 528 | 20 | 31 | 7 | 0 | 0 | 0 |
+| [NGC 346 (MIRI image)](https://www.instagram.com/p/De1WLMEES1i/) | 533 | 21 | 32 | 5 | 0 | 0 | 0 |
+| [Galaxy NGC 1097 (Caldwell 67)](https://www.instagram.com/p/De0HNgtFiy_/) | 544 | 32 | 63 | 9 | 1 | 0 | 0 |
+| [Southern Ring Nebula’s Spokes (NIRCam and MIRI Com](https://www.instagram.com/p/DezQR6VICOz/) | 552 | 33 | 56 | 5 | 1 | 0 | 0 |
+| [Wide Field Imager view of the spiral galaxy NGC 36](https://www.instagram.com/p/DeyxYTsoMBx/) | 557 | 36 | 62 | 9 | 1 | 0 | 2 |
+| [Sculptor Galaxy (NGC 253)](https://www.instagram.com/p/DexiagYDtCS/) | 568 | 33 | 65 | 7 | 0 | 0 | 0 |
+| [M16: Pillars of Star Creation](https://www.instagram.com/p/Dewre73FQUp/) | 576 | 48 | 81 | 17 | 3 | 0 | 1 |
+| [Sh2-311 (NGC 2467)](https://www.instagram.com/p/DewMlerkR8-/) | 581 | 35 | 60 | 8 | 1 | 0 | 0 |
+| [Running Chicken Nebula (IC 2944)](https://www.instagram.com/p/Deu9npiiXck/) | 592 | 22 | 33 | 3 | 0 | 0 | 0 |
+| [NGC 604: Giant Stellar Nursery](https://www.instagram.com/p/DeuGsDBlNRL/) | 600 | 22 | 42 | 10 | 0 | 0 | 0 |
+| [Once in a blue comet](https://www.instagram.com/p/DetnymbG5en/) | 605 | 23 | 36 | 9 | 1 | 0 | 0 |
+| [Moving heart of the Crab Nebula](https://www.instagram.com/p/DesY00aD4eM/) | 616 | 21 | 36 | 11 | 0 | 0 | 0 |
+| [Dark Sand Cascades on Mars](https://www.instagram.com/p/DerC_4lkXhA/) | 629 | 31 | 55 | 8 | 3 | 0 | 0 |
+| [Monkey Head Nebula (NGC 2175)](https://www.instagram.com/p/DeoeM3tkStU/) | 653 | 19 | 33 | 9 | 0 | 0 | 0 |
+| [NGC 2264, Cone Nebula, Fox Fur Nebula](https://www.instagram.com/p/DenPPGsFaGu/) | 664 | 22 | 32 | 11 | 0 | 0 | 0 |
+| [Rosette Nebula (NGC 2237)](https://www.instagram.com/p/DemYTczmwV8/) | 672 | 16 | 29 | 8 | 1 | 0 | 0 |
+| [A supernova duet in NGC 1448](https://www.instagram.com/p/Del5Z49lirx/) | 677 | 15 | 18 | 7 | 0 | 0 | 0 |
+| [Omega Centauri (NGC 5139)](https://www.instagram.com/p/DekqcaXgQS7/) | 688 | 13 | 22 | 6 | 0 | 0 | 0 |
+| [Jupiter imaged using the VISIR instrument on the V](https://www.instagram.com/p/DejzgkQIMrl/) | 696 | 20 | 37 | 9 | 1 | 0 | 0 |
 
-Alertas: Os 3 últimos posts (com mais de 24 h) alcançaram 13/11/9 contas, praticamente só os 64 seguidores: o Instagram não está mostrando para quem não segue.; O alcance da conta nos últimos 7 dias (31) caiu mais da metade em relação aos 7 dias anteriores (215).
+Alertas: Os 3 últimos posts (com mais de 24 h) alcançaram 8/13/11 contas, praticamente só os 64 seguidores: o Instagram não está mostrando para quem não segue.; O alcance da conta nos últimos 7 dias (31) caiu mais da metade em relação aos 7 dias anteriores (215).
