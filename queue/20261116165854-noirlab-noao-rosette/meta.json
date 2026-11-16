@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:noao-rosette",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/noao-rosette.jpg",
+  "title": "Rosette Nebula, NGC 2237",
+  "description": "The Rosette Nebula in the constellation Monoceros. This image, despite being a degree across, still does not include the full size of this magnificent nebula. This color picture was made from CCD images taken in September 1997 at the Burrell Schmidt telescope of the Warner and Swasey Observatory of the Case Western Reserve University, located on Kitt Peak in southwestern Arizona. The image is rather fuzzy, as the weather conditions gave rather poor seeing, and there is a low level noise pattern due to an electrical problem with the CCD imager. As a result, the high resolution version is not really of much use, but it is included for completeness. This image will be replaced when a better one becomes available.",
+  "credit": "KPNO/NOIRLab/NSF/AURA/N. A. Sharp",
+  "alt_text": "",
+  "distance": "",
+  "name": "NGC 2237, Rosette Nebula",
+  "constellation": "Monoceros",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://noirlab.edu/public/images/noao-rosette/",
+  "colourfulness": 67.0,
+  "original_size": [
+    3980,
+    3980
+  ],
+  "prepared_at": "2026-11-16T16:58:55Z"
+}
