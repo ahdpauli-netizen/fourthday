@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2214d",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2214d.jpg",
+  "title": "Neptune Wide-Field (NIRCam Image)",
+  "description": "In this image by Webb’s Near-Infrared Camera (NIRCam), a smattering of hundreds of background galaxies, varying in size and shape, appear alongside the Neptune system.\n\nNeptune, when compared to Earth, is a big planet. If Earth were the size of a nickel, Neptune would be as big as a basketball. In most portraits, the outer planets of our solar system reflect this otherworldly size. However, Neptune appears relatively small in a wide field of the vast universe.\n\nTowards the bottom left of this image, a barred spiral galaxy comes into focus. Scientists say this particular galaxy, previously unexplored in detail, is about 1,200 million light years away. These types of galaxies at this relative difference are typically dominated by young stars that appear blueish in these wavelengths.",
+  "credit": "NASA, ESA, CSA, and STScI",
+  "alt_text": "",
+  "distance": "",
+  "name": "",
+  "constellation": "",
+  "type": "Observation",
+  "category": "NIRCam, Solar System",
+  "page_url": "https://esawebb.org/images/weic2214d/",
+  "colourfulness": 27.1,
+  "original_size": [
+    4253,
+    4134
+  ],
+  "prepared_at": "2026-11-17T09:07:30Z"
+}
