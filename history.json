@@ -76,6 +76,13 @@
       "posted_at": "2026-10-13T15:00:15Z",
       "title": "Hubble view of green filament in galaxy NGC 5972"
     },
+    "esahubble:heic1517a": {
+      "folder": "posted/20261103084157-esahubble-heic1517a",
+      "media_id": "18120026105055180",
+      "permalink": "https://www.instagram.com/p/Df4xnCAFhMh/",
+      "posted_at": "2026-11-18T14:59:05Z",
+      "title": "New Hubble view of the Lagoon Nebula"
+    },
     "esahubble:heic1614a": {
       "folder": "posted/20261018074135-esahubble-heic1614a",
       "media_id": "18118277740978419",
@@ -376,6 +383,7 @@
     "apod:2025-12-02": "Spiral galaxy right after M74",
     "apod:2026-05-16": "third aurora/airglow from orbit in a week; too repetitive",
     "esahubble:heic1704c": "Supernova remnant soon after Crab; small composite",
+    "esahubble:opo0224a": "Crab pulsar repeats \"Moving heart of the Crab Nebula\" (posted October)",
     "esahubble:opo0732a": "multi-panel image with text",
     "esahubble:opo1633a": "Composite illustration, mostly grey (Europa over pixel data), not a real colour photo",
     "esahubble:opo9930a": "Not a real photo: graphic with text panels",
@@ -394,7 +402,6 @@
     "nasa:PIA25725": "Jupiter again (own Jupiter queued, ESO Jupiter 16/10); CC NC SA processing",
     "noirlab:noao-arct": "spectrum chart, not a photo",
     "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy",
-    "esahubble:opo0224a": "Crab pulsar repeats \"Moving heart of the Crab Nebula\" (posted October)"
+    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy"
   }
 }
