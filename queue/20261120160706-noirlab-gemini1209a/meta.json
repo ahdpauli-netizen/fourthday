@@ -1,0 +1,21 @@
+{
+  "key": "noirlab:gemini1209a",
+  "source": "NOIRLab",
+  "image_url": "https://noirlab.edu/public/media/archives/images/large/gemini1209a.jpg",
+  "title": "Sharpest-ever Ground-based Images of Pluto and Charon: Proves a Powerful Tool for Exoplanet Discoveries",
+  "description": "Speckle image reconstruction of Pluto and Charon obtained in visible light at 692 nanometers (red) with the Gemini North 8-meter telescope using the Differential Speckle Survey Instrument (DSSI). Resolution of the image is about 20 milliarcseconds average. This is the first speckle reconstructed image for Pluto and Charon from which astronomers obtained not only the separation and position angle for Charon, but also the diameters of the two bodies. North is up, east is to the left, and the image section shown here is 1.39 arcseconds across.",
+  "credit": "Gemini Observatory/NSF/NASA/AURA",
+  "alt_text": "",
+  "distance": "",
+  "name": "Charon (moon), Pluto",
+  "constellation": "",
+  "type": "Observation",
+  "category": "Solar System",
+  "page_url": "https://noirlab.edu/public/images/gemini1209a/",
+  "colourfulness": 80.6,
+  "original_size": [
+    1267,
+    1267
+  ],
+  "prepared_at": "2026-11-20T16:07:06Z"
+}
