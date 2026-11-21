@@ -409,6 +409,7 @@
     "nasa:PIA25725": "Jupiter again (own Jupiter queued, ESO Jupiter 16/10); CC NC SA processing",
     "noirlab:noao-arct": "spectrum chart, not a photo",
     "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy"
+    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy",
+    "noirlab:gemini1209a": "Single-wavelength speckle reconstruction of Pluto/Charon: two blurry false-colour blobs, effectively monochrome"
   }
 }
