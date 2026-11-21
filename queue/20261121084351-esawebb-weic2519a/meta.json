@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2519a",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2519a.jpg",
+  "title": "Stellar jet in Sh2-284 (NIRCam image)",
+  "description": "The NASA/ESA/CSA James Webb Space Telescope recently imaged an extremely large stellar jet at the outskirts of our Milky Way galaxy in the proto-cluster Sh2-284. This Herbig-Haro (HH) object, jets of plasma shooting out from newly formed stars, is 8 light-years across. This is about double the distance from our Sun to its closest neighboring star system, Alpha Centauri.\n\nIts detection provides evidence that HH jets scale with the mass of their parent stars—the more massive the stellar engine driving the plasma, the larger the resulting jet.",
+  "credit": "NASA, ESA, CSA, STScI, Y. Cheng (NAOJ), J. DePasquale (STScI)",
+  "alt_text": "Gaseous yellow-orange filaments look like a rose seen from the side and tilted slightly from upper left to lower right, slightly higher than the center of the frame. Extending from the rose to upper left and lower right are gaseous outflows that appear as red lobes that have an overall shape of tall, narrow triangles with rounded tips. Each red triangle is made up of wavy, irregular lines. Dozens of stars are scattered across the field. One particularly bright white star with eight diffraction spikes is located at the top of the yellow rose. Another bright blue star with even more prominent diffraction spikes is to its lower left. The background of space is black.",
+  "distance": "",
+  "name": "",
+  "constellation": "Monoceros",
+  "type": "Observation",
+  "category": "NIRCam, Stars",
+  "page_url": "https://esawebb.org/images/weic2519a/",
+  "colourfulness": 43.2,
+  "original_size": [
+    3000,
+    2869
+  ],
+  "prepared_at": "2026-11-21T08:43:51Z"
+}
