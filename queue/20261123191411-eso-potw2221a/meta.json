@@ -1,0 +1,21 @@
+{
+  "key": "eso:potw2221a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/potw2221a.jpg",
+  "title": "Full Moon turns red",
+  "description": "This ominous Picture of the Week shows our very own Moon undergoing a total lunar eclipse. The image was taken on the night of May 15 2022 from ESO’s Paranal Observatory in Chile. During a lunar eclipse, the Earth is positioned directly between the Sun and the Moon, blocking some of the Sun’s light. This casts a shadow across the Moon’s surface. \nThe red colour is caused by the Sun’s rays interacting with the Earth’s atmosphere. Light from the Sun contains a whole spectrum of colours. Blue light is dispersed by the atmosphere through a process called Rayleigh scattering (which makes the sky blue) while red light can pass through the atmosphere more easily, becoming slightly deflected. This red light reaches the Moon’s surface, giving rise to its dramatic crimson hue. \nThis photo was taken during the eclipse’s totality, when the Earth is causing the largest blockage of the Sun’s light. It was taken by two ESO colleagues at Paranal Observatory using an amateur telescope nicknamed “UT5” as a nod to its much larger siblings, the four 8-m Unit Telescopes at ESO’s Very Large Telescope. Fun fact: astronomers often take spectra of lunar eclipses to understand the signatures that life can leave on Earth’s atmosphere, which is a very useful reference when searching for similar signatures in exoplanets.",
+  "credit": "F. Aedo, F. Durán/ESO",
+  "alt_text": "",
+  "distance": "",
+  "name": "Eclipse, Moon",
+  "constellation": "",
+  "type": "Photographic",
+  "category": "Solar System",
+  "page_url": "https://www.eso.org/public/images/potw2221a/",
+  "colourfulness": 64.7,
+  "original_size": [
+    3024,
+    3024
+  ],
+  "prepared_at": "2026-11-23T19:14:11Z"
+}
