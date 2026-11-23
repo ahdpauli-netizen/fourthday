@@ -56,6 +56,13 @@
       "posted_at": "2026-10-09T15:48:23Z",
       "title": "Manicouagan Impact Crater from Space"
     },
+    "apod:2026-02-06": {
+      "folder": "posted/20261109173039-apod-2026-02-06",
+      "media_id": "18151705450560031",
+      "permalink": "https://www.instagram.com/p/DgFplQVEYzp/",
+      "posted_at": "2026-11-23T14:59:05Z",
+      "title": "Supernova Remnant Cassiopeia A"
+    },
     "apod:2026-04-13": {
       "folder": "hold/20261018074130-apod-2026-04-13",
       "note": "Posted manually by Adriano",
@@ -407,9 +414,9 @@
     "nasa:NHQ202207120010": "Photo of a screen at a press event, not an astro photo; Carina also posted by hand 2026-10-29",
     "nasa:PIA21780": "Jupiter again, ESO Jupiter posted 2026-10-16",
     "nasa:PIA25725": "Jupiter again (own Jupiter queued, ESO Jupiter 16/10); CC NC SA processing",
+    "noirlab:gemini1209a": "Single-wavelength speckle reconstruction of Pluto/Charon: two blurry false-colour blobs, effectively monochrome",
     "noirlab:noao-arct": "spectrum chart, not a photo",
     "noirlab:noao-n2158jacobstein": "Too many star clusters in a row (M9, Omega Centauri)",
-    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy",
-    "noirlab:gemini1209a": "Single-wavelength speckle reconstruction of Pluto/Charon: two blurry false-colour blobs, effectively monochrome"
+    "noirlab:noao-rosette": "Rosette already posted (his Seestar photo); source says this image is fuzzy and noisy"
   }
 }
