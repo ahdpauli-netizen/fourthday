@@ -48,9 +48,12 @@ jobs:
           if [ $hour -lt 9 ]; then slot=0730; elif [ $hour -lt 15 ]; then slot=1200; else slot=2000; fi
           # Read history.json from the latest main, not from the commit that fired this run.
           git fetch -q origin "${GITHUB_REF_NAME}"
-          if git show FETCH_HEAD:history.json | python3 -c "import json,sys,datetime as d; t=d.datetime.now(d.timezone.utc).strftime('%Y-%m-%d'); sys.exit(0 if any(v.get('posted_at','').startswith(t) for v in json.load(sys.stdin)['posted'].values()) else 1)"; then
+          # Compare Brasília dates: a late run after 21h BRT is already the next UTC day (it posted twice on 2026-11-23).
+          if git show FETCH_HEAD:history.json | python3 -c "import json,sys,datetime as d; z=d.timezone(d.timedelta(hours=-3)); t=d.datetime.now(z).date(); sys.exit(0 if any(v.get('posted_at') and d.datetime.fromisoformat(v['posted_at'].replace('Z','+00:00')).astimezone(z).date()==t for v in json.load(sys.stdin)['posted'].values()) else 1)"; then
             echo "::notice::Already posted today"; echo "skip=true" >> "$GITHUB_OUTPUT"
           fi
+          # GitHub sometimes fires the 12h schedule many hours late; never post in the evening.
+          if [ $hour -ge 15 ]; then echo "::notice::Scheduled run fired too late ($hour h BRT)"; echo "skip=true" >> "$GITHUB_OUTPUT"; fi
           for d in $SKIP_DATES $SKIP_SLOTS; do
             if [ "$d" = "$today" ] || [ "$d" = "${today}_$slot" ]; then echo "::notice::No automatic post for $today $slot"; echo "skip=true" >> "$GITHUB_OUTPUT"; fi
           done
