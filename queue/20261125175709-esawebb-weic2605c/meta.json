@@ -1,0 +1,21 @@
+{
+  "key": "esawebb:weic2605c",
+  "source": "ESA/Webb",
+  "image_url": "https://cdn.esawebb.org/archives/images/large/weic2605c.jpg",
+  "title": "Exposed Cranium Nebula (NIRCam image)",
+  "description": "A distinct dark lane between two cosmic clouds adds to the brainy appearance of nebula PMR 1. The NIRCam (Near-Infrared Camera) instrument on the James Webb Space Telescope shows multiple phases of a dying star’s outbursts in one image: the skull-like, whitish outer bubble is from an initial ejection, mostly of hydrogen, followed by other heavier material, shown in orange in the nebula’s interior. As with many NIRCam images, many stars and even distant galaxies can be seen behind the nebula.\n\nBeyond its unusual appearance there is still much to be uncovered about PMR 1. It’s unclear if the star creating the nebula is massive enough to undergo a supernova, or if it will evolve into a dense white dwarf once it has shed all its outer layers.",
+  "credit": "NASA, ESA, CSA, STScI, Image Processing: Joseph DePasquale (STScI)",
+  "alt_text": "A nebula appears like a transparent bubble with a white edge, inside which are two hemispheres of orange clouds being blown out from the centre, split by a dark lane, giving the overall appearance of a see-through skull with a brain inside, as seen from above. A few stars appear with six points, and small background galaxies can be seen around and through the outer bubble.",
+  "distance": "",
+  "name": "",
+  "constellation": "Vela",
+  "type": "Observation",
+  "category": "Nebulae, NIRCam",
+  "page_url": "https://esawebb.org/images/weic2605c/",
+  "colourfulness": 33.0,
+  "original_size": [
+    4330,
+    4537
+  ],
+  "prepared_at": "2026-11-25T17:57:10Z"
+}
