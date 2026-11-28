@@ -1,0 +1,21 @@
+{
+  "key": "esahubble:heic1212b",
+  "source": "ESA/Hubble",
+  "image_url": "https://cdn.esahubble.org/archives/images/large/heic1212b.jpg",
+  "title": "Hubble finds fifth moon orbiting Pluto (unlabelled)",
+  "description": "This image, taken by the NASA/ESA Hubble Space Telescope, shows five moons orbiting the distant, icy dwarf planet Pluto, including a newly discovered moon, designated S/2012 (134340) 1, or P5, as photographed by Hubble’s Wide Field Camera 3 on 7 July 2012.\n\nOther observations that collectively show the moon’s orbital motion were taken on 26, 27 and 29 June and on July 9.\n\nThe moon is estimated to be 10 to 25 kilometres across. It is in a 95 000 kilometre diameter circular orbit around Pluto that is assumed to be aligned in the same plane as the other satellites in the system.\n\nThe darker stripe in the centre of the image is because the picture is constructed from a long exposure designed to capture the comparatively faint satellites of Nix, Hydra, P4 and S/2012 (134340) 1, and a shorter exposure to capture Pluto and Charon, which are much brighter.",
+  "credit": "NASA, ESA, and M. Showalter (SETI Institute)",
+  "alt_text": "",
+  "distance": "",
+  "name": "Charon, Hydra, Nix, P4, Pluto, S/2012 (134340) 1",
+  "constellation": "",
+  "type": "Observation",
+  "category": "Solar System",
+  "page_url": "https://esahubble.org/images/heic1212b/",
+  "colourfulness": 46.6,
+  "original_size": [
+    2220,
+    2472
+  ],
+  "prepared_at": "2026-11-28T08:42:47Z"
+}
