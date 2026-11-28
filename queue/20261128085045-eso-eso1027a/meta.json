@@ -1,0 +1,21 @@
+{
+  "key": "eso:eso1027a",
+  "source": "ESO",
+  "image_url": "https://cdn.eso.org/images/large/eso1027a.jpg",
+  "title": "The R Coronae Australis region imaged with the Wide Field Imager at La Silla*",
+  "description": "The nearby star-forming region around the star R Coronae Australis imaged by the Wide Field Imager (WFI) on the MPG/ESO 2.2-metre telescope at ESO’s La Silla Observatory in Chile. This picture, which covers a field of 33.7 x 31.9 arcminutes (about the diameter of the full Moon), is a combination of twelve CCD frames, 67 megapixels each, taken through B, V and R filters, with four exposures of five minutes each.\nThis image is available as a mounted image in the ESOshop.\n#L",
+  "credit": "ESO",
+  "alt_text": "",
+  "distance": "400 light years",
+  "name": "R Coronae Australis",
+  "constellation": "Corona Australis",
+  "type": "Observation",
+  "category": "Nebulae",
+  "page_url": "https://www.eso.org/public/images/eso1027a/",
+  "colourfulness": 21.7,
+  "original_size": [
+    8795,
+    8573
+  ],
+  "prepared_at": "2026-11-28T08:50:46Z"
+}
